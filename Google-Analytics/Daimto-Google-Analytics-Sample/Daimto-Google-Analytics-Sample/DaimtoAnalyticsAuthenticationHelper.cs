@@ -58,7 +58,7 @@ namespace Daimto_Google_Analytics_Sample
         }
 
         /// <summary>
-        /// Autenticating to Google using a Service account
+        /// Authenticating to Google using a Service account
         /// Documentation: https://developers.google.com/accounts/docs/OAuth2#serviceaccount
         /// </summary>
         /// <param name="_serviceAccountEmail">From Google Developer console https://console.developers.google.com</param>
