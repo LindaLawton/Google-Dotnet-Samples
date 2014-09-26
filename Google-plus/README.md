@@ -21,9 +21,9 @@ Tutorials for these projects can be found on [WWW.DAIMTO.COM](http://www.daimto.
 
 
 Three part Tutorial Series:
-1. [Google+ API List with C# -  List (Articles, People, comments)](http://www.daimto.com/googleplusapi-list-with-csharp/)
-2. [Google+ API Get with C#  – Get (Article, Person, comment)](http://www.daimto.com/googleplusapi-get-csharp/)
-3. [Google+ API Search with C#  – Search (Articles and People)](http://www.daimto.com/googleplusapi-search-csharp/)
+ 1. [Google+ API List with C# -  List (Articles, People, comments)](http://www.daimto.com/googleplusapi-list-with-csharp/)
+ 2. [Google+ API Get with C#  – Get (Article, Person, comment)](http://www.daimto.com/googleplusapi-get-csharp/)
+ 3. [Google+ API Search with C#  – Search (Articles and People)](http://www.daimto.com/googleplusapi-search-csharp/)
 
 
 
