@@ -19,13 +19,13 @@ namespace Daimto_Google_Analytics_Sample
     {
         static void Main(string[] args)
         {
-            AnalyticsService Service;
+            AnalyticsService service;
 
 
             // Authenticate Oauth2
             String CLIENT_ID = "1046123799103-7mk8g2iok1dv9fphok8v2kv82hiqb0q6.apps.googleusercontent.com";
             String CLIENT_SECRET = "GeE-cD7PtraV0LqyoxqPnOpv";
-            Service = DaimtoAnalyticsAuthenticationHelper.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
+            service = DaimtoAnalyticsAuthenticationHelper.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
 
             //// Service account Authentication 
             //String SERVICE_ACCOUNT_EMAIL = "1046123799103-nk421gjc2v8mlr2qnmmqaak04ntb1dbp@developer.gserviceaccount.com";
@@ -36,7 +36,7 @@ namespace Daimto_Google_Analytics_Sample
 
 
             //Get account summary and display them.
-            foreach (AccountSummary account in DaimtoAnaltyicsManagmentHelper.AccountSummaryList(Service))
+            foreach (AccountSummary account in DaimtoAnaltyicsManagmentHelper.AccountSummaryList(service))
             {
                 // Account
                 Console.WriteLine("Account: " + account.Name + "(" + account.Id + ")");
@@ -65,17 +65,17 @@ namespace Daimto_Google_Analytics_Sample
             // Web property, and profile objects then you do from the same summary objects
             //This will require a large number of requests to be sent against the API, be mindful of 
             //  your quota (10000 requests per profile(view) per day) if you use this method.   
-            foreach (Account account in DaimtoAnaltyicsManagmentHelper.AccountList(Service))
+            foreach (Account account in DaimtoAnaltyicsManagmentHelper.AccountList(service))
             {
 
                 // Account
                 Console.WriteLine("Account: " + account.Name + "(" + account.Id + ")");
-                foreach (Webproperty wp in DaimtoAnaltyicsManagmentHelper.WebpropertyList(Service, account.Id))
+                foreach (Webproperty wp in DaimtoAnaltyicsManagmentHelper.WebpropertyList(service, account.Id))
                 {
                     // Web Properties within that account
                     Console.WriteLine("\tWeb Property: " + wp.Name + "(" + wp.Id + ")");
 
-                    foreach (Profile profile in DaimtoAnaltyicsManagmentHelper.ProfileList(Service, account.Id, wp.Id))
+                    foreach (Profile profile in DaimtoAnaltyicsManagmentHelper.ProfileList(service, account.Id, wp.Id))
                     {
 
                         Console.WriteLine("\t\tProfile: " + profile.Name + "(" + profile.Id + ")");
@@ -88,7 +88,7 @@ namespace Daimto_Google_Analytics_Sample
 
             string lastGroup = string.Empty;
             string lastType = string.Empty;
-            Columns metadata = DaimtoAnaltyicsMetaDataHelper.MetaDataList(Service);
+            Columns metadata = DaimtoAnaltyicsMetaDataHelper.MetaDataList(service);
             foreach (Column column in metadata.Items.OrderBy(a => a.Attributes["group"]).OrderBy(a => a.Attributes["type"]).ToList())
             {
                 if (column.Attributes["group"] != lastGroup)
@@ -106,13 +106,16 @@ namespace Daimto_Google_Analytics_Sample
                 Console.WriteLine("\t\t" + column.Attributes["uiName"] + " : " + column.Id);
             }
             
-            DaimtoAnaltyicsReportingHelper.optionalValues options = new DaimtoAnaltyicsReportingHelper.optionalValues();
+            DaimtoAnaltyicsReportingHelper.OptionalValues options = new DaimtoAnaltyicsReportingHelper.OptionalValues();
             options.Dimensions = "ga:date";
             //Make sure the profile id you send is valid.  
-            var x = DaimtoAnaltyicsReportingHelper.get(Service, "78110423", "10daysAgo", "today", "ga:sessions", options);
+            var x = DaimtoAnaltyicsReportingHelper.Get(service, "78110423", "10daysAgo", "today", "ga:sessions", options);
 
 
-
+            DaimtoAnaltyicsRealTimeHelper.OptionalValues rtOptions = new DaimtoAnaltyicsRealTimeHelper.OptionalValues();
+            options.Dimensions = "rt:userType";
+            //Make sure the profile id you send is valid.  
+            var realTimeData = DaimtoAnaltyicsRealTimeHelper.Get(service, "78110423", "rt:activeUsers", rtOptions);
 
         }
     }
