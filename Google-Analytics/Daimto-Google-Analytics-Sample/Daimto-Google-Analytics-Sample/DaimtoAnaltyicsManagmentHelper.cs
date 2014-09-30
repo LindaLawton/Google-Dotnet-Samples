@@ -1,4 +1,19 @@
-﻿using System;
+﻿/*
+ * Copyright 2014 Daimto.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,42 +32,39 @@ namespace Daimto_Google_Analytics_Sample
         /// </summary>
         /// <param name="service">Valid authenticated Analytics Service</param>
         /// <returns>List of Account Summaries resource - https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountSummaries</returns>
-        public static IList<AccountSummary> AccountSummaryList(AnalyticsService service)
+        public static List<AccountSummary> AccountSummaryList(AnalyticsService service)
         {
 
             //List all of the activities in the specified collection for the current user.  
             // Documentation: https://developers.google.com/+/api/latest/activities/list
 
             ManagementResource.AccountSummariesResource.ListRequest list = service.Management.AccountSummaries.List();
-            list.MaxResults = 1000;
+            list.MaxResults = 1000;  // Maximum number of Account Summaries to return per request. 
 
-            AccountSummaries Feed = list.Execute();
-
-            IList<AccountSummary> returnList = new List<AccountSummary>();
+            AccountSummaries feed = list.Execute();
+            List<AccountSummary> allRows = new List<AccountSummary>();
+          
             //// Loop through until we arrive at an empty page
-            while (Feed.Items != null)
+            while (feed.Items != null)
             {
-                // Adding each item  to the list.
-                foreach (var item in Feed.Items)
-                {
-                    returnList.Add(item);
-                }
 
+                allRows.AddRange(feed.Items);
+          
                 // We will know we are on the last page when the next page token is
                 // null.
                 // If this is the case, break.
-                if (Feed.NextLink == null)
+                if (feed.NextLink == null)
                 {
                     break;
                 }
 
                 // Prepare the next page of results             
-                list.StartIndex = Feed.StartIndex + list.MaxResults;
+                list.StartIndex = feed.StartIndex + list.MaxResults;
                 // Execute and process the next page request
-                Feed = list.Execute();
+                feed = list.Execute();
 
             }
-            return returnList;
+            return allRows;
 
         }
         #endregion
@@ -71,35 +83,32 @@ namespace Daimto_Google_Analytics_Sample
             // Documentation: https://developers.google.com/+/api/latest/activities/list
 
             ManagementResource.AccountsResource.ListRequest list = service.Management.Accounts.List();
-            list.MaxResults = 1000;
+            list.MaxResults = 1000; // Maximum number of Accounts to return, per request. 
 
-            Accounts Feed = list.Execute();
+            Accounts feed = list.Execute();
 
-            IList<Account> ResultList = new List<Account>();
+            List<Account> resultList = new List<Account>();
             //// Loop through until we arrive at an empty page
-            while (Feed.Items != null)
+            while (feed.Items != null)
             {
-                // Adding each item  to the list.
-                foreach (var item in Feed.Items)
-                {
-                    ResultList.Add(item);                    
-                }
+                //Adding return items.
+                resultList.AddRange(feed.Items);                
 
                 // We will know we are on the last page when the next page token is
                 // null.
                 // If this is the case, break.
-                if (Feed.NextLink == null)
+                if (feed.NextLink == null)
                 {
                     break;
                 }
 
                 // Prepare the next page of results             
-                list.StartIndex = Feed.StartIndex + list.MaxResults;
+                list.StartIndex = feed.StartIndex + list.MaxResults;
                 // Execute and process the next page request
-                Feed = list.Execute();
+                feed = list.Execute();
 
             }
-            return ResultList;
+            return resultList;
 
         }
 
@@ -115,14 +124,14 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="accountId">Account Id </param>
         /// <param name="webPropertyId">Web property Id</param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static Webproperty WebpropertyGet(AnalyticsService service,String accountId, String webPropertyId) {
+        public static Webproperty WebpropertyGet(AnalyticsService service,string accountId, string webPropertyId) {
                                     
             ManagementResource.WebpropertiesResource.GetRequest get = service.Management.Webproperties.Get(accountId, webPropertyId);
-
+           
             try
             {
-                var WP = get.Execute();
-                return WP;
+                var wp = get.Execute();
+                return wp;
             }
             catch (Exception ex) {
 
@@ -147,20 +156,20 @@ namespace Daimto_Google_Analytics_Sample
         /// </summary>
         /// <param name="service">Valid Authenticated Analytics Service </param>
         /// <param name="accountId">Account Id </param>
-        /// <param name="Name">Name of the new webProperty</param>
-        /// <param name="WebsiteURL">Url for the website of the new webProperty</param>
+        /// <param name="name">Name of the new webProperty</param>
+        /// <param name="websiteURL">URL for the website of the new webProperty</param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static Webproperty WebpropertyInsert(AnalyticsService service, String accountId, string Name, string WebsiteURL)
+        public static Webproperty WebpropertyInsert(AnalyticsService service, string accountId, string name, string websiteURL)
         {
 
             Webproperty body = new Webproperty();
-            body.WebsiteUrl = WebsiteURL;
-            body.Name = Name;
+            body.WebsiteUrl = websiteURL;
+            body.Name = name;
 
             try
             {
-                Webproperty WP = service.Management.Webproperties.Insert(body, accountId).Execute();
-                return WP;
+                Webproperty wp = service.Management.Webproperties.Insert(body, accountId).Execute();
+                return wp;
             }
             catch (Exception ex)
             {
@@ -179,39 +188,36 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="service">Valid authenticated Analytics Service</param>
         /// <param name="accountId">Account Id </param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static IList<Webproperty> WebpropertyList(AnalyticsService service, String accountId)
+        public static IList<Webproperty> WebpropertyList(AnalyticsService service, string accountId)
         {
 
             ManagementResource.WebpropertiesResource.ListRequest list = service.Management.Webproperties.List(accountId);
             list.MaxResults = 1000;
 
-            Webproperties Feed = list.Execute();
+            Webproperties feed = list.Execute();
 
-            IList<Webproperty> ReturnList = new List<Webproperty>();
+            List<Webproperty> returnList = new List<Webproperty>();
             //// Loop through until we arrive at an empty page
-            while (Feed.Items != null)
+            while (feed.Items != null)
             {
-                // Adding each item  to the list.
-                foreach (var item in Feed.Items)
-                {
-                    ReturnList.Add(item);
-                }
+                // Adding items to the list
+                returnList.AddRange(feed.Items);
 
                 // We will know we are on the last page when the next page token is
                 // null.
                 // If this is the case, break.
-                if (Feed.NextLink == null)
+                if (feed.NextLink == null)
                 {
                     break;
                 }
 
                 // Prepare the next page of results             
-                list.StartIndex = Feed.StartIndex + list.MaxResults;
+                list.StartIndex = feed.StartIndex + list.MaxResults;
                 // Execute and process the next page request
-                Feed = list.Execute();
+                feed = list.Execute();
 
             }
-            return ReturnList;
+            return returnList;
 
         }
 
@@ -232,13 +238,13 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="accountId">Account ID to which the web property belongs </param>
         /// <param name="webPropertyId">Web property ID</param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static Webproperty WebpropertyPatch(AnalyticsService service, Webproperty body, String accountId, string webPropertyId)
+        public static Webproperty WebpropertyPatch(AnalyticsService service, Webproperty body, string accountId, string webPropertyId)
         {
 
             try
             {
-                Webproperty WP = service.Management.Webproperties.Patch(body, accountId, webPropertyId).Execute();
-                return WP;
+                Webproperty wp = service.Management.Webproperties.Patch(body, accountId, webPropertyId).Execute();
+                return wp;
             }
             catch (Exception ex)
             {
@@ -265,13 +271,13 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="accountId">Account ID to which the web property belongs </param>
         /// <param name="webPropertyId">Web property ID</param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static Webproperty WebpropertyUpdate(AnalyticsService service, Webproperty body, String accountId, string webPropertyId)
+        public static Webproperty WebpropertyUpdate(AnalyticsService service, Webproperty body, string accountId, string webPropertyId)
         {
 
             try
             {
-                Webproperty WP = service.Management.Webproperties.Update(body, accountId, webPropertyId).Execute();
-                return WP;
+                Webproperty wp = service.Management.Webproperties.Update(body, accountId, webPropertyId).Execute();
+                return wp;
             }
             catch (Exception ex)
             {
@@ -291,12 +297,12 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="service">Valid Authenticated Analytics Service </param>
         /// <param name="accountId">Account Id </param>
         /// <param name="webPropertyId">Web property Id</param>
-        /// <param name="profilesId">Profile Id</param>
+        /// <param name="profileId">Profile Id</param>
         /// <returns>A Profile resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles </returns>
-        public static Profile ProfileGet(AnalyticsService service, String accountId, String webPropertyId ,String profilesId)
+        public static Profile ProfileGet(AnalyticsService service, string accountId, string webPropertyId ,string profileId)
         {
 
-            ManagementResource.ProfilesResource.GetRequest get = service.Management.Profiles.Get(accountId, webPropertyId, profilesId);
+            ManagementResource.ProfilesResource.GetRequest get = service.Management.Profiles.Get(accountId, webPropertyId, profileId);
 
             try
             {
@@ -329,9 +335,9 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="body">relevant portions of a management.profiles resource, according to the rules of patch semantics.</param>
         /// <param name="accountId">Account Id </param>
         /// <param name="webPropertyId">Web property Id</param>
-        /// <param name="WebsiteURL">Url for the website of the new profiles</param>
+        /// <param name="WebsiteURL">URL for the website of the new profiles</param>
         /// <returns>A Profile resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles </returns>
-        public static Profile profilesInsert(AnalyticsService service, Profile body, String accountId, String webPropertyId)
+        public static Profile profilesInsert(AnalyticsService service, Profile body, string accountId, string webPropertyId)
         {
 
 
@@ -357,39 +363,36 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="accountId">Account Id </param>
         /// <param name="webPropertyId">Web property Id</param>
         /// <returns>A Profile resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles </returns>
-        public static IList<Profile> ProfileList(AnalyticsService service, String accountId, String webPropertyId)
+        public static IList<Profile> ProfileList(AnalyticsService service, string accountId, string webPropertyId)
         {
 
             ManagementResource.ProfilesResource.ListRequest list = service.Management.Profiles.List(accountId,webPropertyId);
             list.MaxResults = 1000;
 
-            Profiles Feed = list.Execute();
+            Profiles feed  = list.Execute();
 
-            IList<Profile> ReturnList = new List<Profile>();
+            List<Profile> returnList = new List<Profile>();
             //// Loop through until we arrive at an empty page
-            while (Feed.Items != null)
+            while (feed.Items != null)
             {
-                // Adding each item  to the list.
-                foreach (var item in Feed.Items)
-                {
-                    ReturnList.Add(item);
-                }
+                //Adding items to return list.
+                returnList.AddRange(feed.Items);
 
                 // We will know we are on the last page when the next page token is
                 // null.
                 // If this is the case, break.
-                if (Feed.NextLink == null)
+                if (feed.NextLink == null)
                 {
                     break;
                 }
 
                 // Prepare the next page of results             
-                list.StartIndex = Feed.StartIndex + list.MaxResults;
+                list.StartIndex = feed.StartIndex + list.MaxResults;
                 // Execute and process the next page request
-                Feed = list.Execute();
+                feed = list.Execute();
 
             }
-            return ReturnList;
+            return returnList;
 
         }
 
@@ -411,7 +414,7 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="webPropertyId">Web property Id</param>
         /// <param name="profilesId">profile ID</param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static Profile ProfilePatch(AnalyticsService service, Profile body, String accountId, String webPropertyId, string profilesId)
+        public static Profile ProfilePatch(AnalyticsService service, Profile body, string accountId, string webPropertyId, string profilesId)
         {
 
             try
@@ -445,7 +448,7 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="webPropertyId">Web property Id</param>
         /// <param name="profilesId">profile ID</param>
         /// <returns>A Web property resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties </returns>
-        public static Profile ProfileUpdate(AnalyticsService service, Profile body, String accountId, String webPropertyId, string profilesId)
+        public static Profile ProfileUpdate(AnalyticsService service, Profile body, string accountId, string webPropertyId, string profilesId)
         {
 
             try
