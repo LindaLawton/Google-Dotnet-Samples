@@ -1,4 +1,19 @@
-﻿using System;
+﻿/*
+ * Copyright 2014 Daimto.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -93,9 +108,7 @@ namespace Daimto_Google_Analytics_Sample
         /// <returns></returns>
         public static GaData get(AnalyticsService service, string profileId, string startDate, string endDate, string metrics, OptionalValues optionalValues)
         {
-
-            DataResource.GaResource.GetRequest request = service.Data.Ga.Get("ga:" + profileId, startDate, endDate, metrics);
-
+            DataResource.GaResource.GetRequest request = service.Data.Ga.Get(String.Format("ga:{0}", profileId), startDate, endDate, metrics);
             if (optionalValues == null)
             {
                 request.MaxResults = 1000;
@@ -120,13 +133,13 @@ namespace Daimto_Google_Analytics_Sample
             try
             {
                 GaData result = request.Execute();
-                List<IList<string>> AllRows = new List<IList<string>>();
+                List<IList<string>> allRows = new List<IList<string>>();
 
                 //// Loop through until we arrive at an empty page
                 while (result.Rows != null)
                 {
                     //Add the rows to the final list
-                    AllRows.AddRange(result.Rows);
+                    allRows.AddRange(result.Rows);
 
                     // We will know we are on the last page when the next page token is
                     // null.
@@ -142,9 +155,9 @@ namespace Daimto_Google_Analytics_Sample
                     result = request.Execute();
 
                 }
-                GaData AllData = result;
-                AllData.Rows = (List<IList<string>>)AllRows;
-                return AllData;
+                GaData allData = result;
+                allData.Rows = (List<IList<string>>)allRows;
+                return allData;
             }
             catch (Exception ex)
             {
