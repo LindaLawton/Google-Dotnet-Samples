@@ -13,44 +13,44 @@ namespace Daimto_Google_Analytics_Sample
         /// <summary>
         /// There are several query Parameters that are optional this will allow you to send the ones you want.
         /// </summary>
-        public class optionalValues
+        public class OptionalValues
         {
-            private String _Dimensions { get; set; }
-            private String _Filter { get; set; }
-            private String _Sort { get; set; }
-            private String _Segment { get; set; }
-            private int _MaxResults { get; set; }
-            private DataResource.GaResource.GetRequest.SamplingLevelEnum _SampleingLevel = DataResource.GaResource.GetRequest.SamplingLevelEnum.DEFAULT;
+            private string dimensions { get; set; }
+            private string filter { get; set; }
+            private string sort { get; set; }
+            private string segment { get; set; }
+            private int maxResults { get; set; }
+            private DataResource.GaResource.GetRequest.SamplingLevelEnum sampleingLevel = DataResource.GaResource.GetRequest.SamplingLevelEnum.DEFAULT;
 
 
             /// <summary>
             /// A list of comma-separated dimensions for your Analytics data, such as ga:browser,ga:city. 
             /// Documentation: https://developers.google.com/analytics/devguides/reporting/core/v3/reference#dimensions
             /// </summary>            
-            public String Dimensions { get { return _Dimensions; } set { _Dimensions = value; } }
+            public string Dimensions { get { return dimensions; } set { dimensions = value; } }
 
             /// <summary>
             /// Dimension or metric filters that restrict the data returned for your request. 
             /// Documentation: https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters
             /// </summary>
-            public String Filter { get { return _Filter; } set { _Filter = value; } }
+            public string Filter { get { return filter; } set { filter = value; } }
 
             /// <summary>
             /// A list of comma-separated dimensions and metrics indicating the sorting order and sorting direction for the returned data. 
             /// Documentation:  https://developers.google.com/analytics/devguides/reporting/core/v3/reference#sort
             /// </summary>
-            public String Sort { get { return _Sort; } set { _Sort = value; } }
+            public string Sort { get { return sort; } set { sort = value; } }
 
             /// <summary>            
             /// Segments the data returned for your request. 
             /// Documentation: https://developers.google.com/analytics/devguides/reporting/core/v3/reference#segment
             /// </summary>
-            public String Segment { get { return _Segment; } set { _Segment = value; } }
+            public string Segment { get { return segment; } set { segment = value; } }
 
             /// <summary>
             /// The maximum number of rows to include in the response. max is 10000
             /// </summary>
-            public int MaxResults { get { return _MaxResults; } set { _MaxResults = value; } }
+            public int MaxResults { get { return maxResults; } set { maxResults = value; } }
 
 
             /// <summary>
@@ -61,19 +61,19 @@ namespace Daimto_Google_Analytics_Sample
             /// •HIGHER_PRECISION — Returns a more accurate response using a large sample size, but this may result in the response being slower.
             /// Documentation: https://developers.google.com/analytics/devguides/reporting/core/v3/reference#samplingLevel
             /// </summary>
-            public DataResource.GaResource.GetRequest.SamplingLevelEnum Sampling { get { return _SampleingLevel; } set { _SampleingLevel = value; } }
+            public DataResource.GaResource.GetRequest.SamplingLevelEnum Sampling { get { return sampleingLevel; } set { sampleingLevel = value; } }
 
             /// <summary>
             /// Constructor sets up the default values, for things that can't be null.
             /// </summary>
-            public optionalValues()
+            public OptionalValues()
             {
-                this._Dimensions = null;
-                this._Filter = null;
-                this._Sort = null;
-                this._Segment = null;
-                this._SampleingLevel = DataResource.GaResource.GetRequest.SamplingLevelEnum.DEFAULT;
-                this._MaxResults = 1000;
+                this.dimensions = null;
+                this.filter = null;
+                this.sort = null;
+                this.segment = null;
+                this.sampleingLevel = DataResource.GaResource.GetRequest.SamplingLevelEnum.DEFAULT;
+                this.maxResults = 1000;
             }
         }
 
@@ -82,7 +82,7 @@ namespace Daimto_Google_Analytics_Sample
         /// You query the Core Reporting API for Google Analytics report data. 
         /// Documentation: https://developers.google.com/analytics/devguides/reporting/core/v3/reference
         /// 
-        /// Dimension and metric refrence : https://developers.google.com/analytics/devguides/reporting/core/dimsmets
+        /// Dimension and metric reference : https://developers.google.com/analytics/devguides/reporting/core/dimsmets
         /// </summary>
         /// <param name="service">Valid Authenticated AnalyticsServicve </param>
         /// <param name="ProfileId">The unique table ID of the form XXXX, where XXXX is the Analytics view (profile) ID for which the query will retrieve the data. </param>
@@ -91,23 +91,23 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="Metrics">A list of comma-separated metrics, such as ga:sessions,ga:bounces. </param>
         /// <param name="MyValues">Optional values can be null </param>
         /// <returns></returns>
-        public static GaData get(AnalyticsService service, String ProfileId, String StartDate, String EndDate, String Metrics, optionalValues MyValues)
+        public static GaData get(AnalyticsService service, string profileId, string startDate, string endDate, string metrics, OptionalValues optionalValues)
         {
 
-            DataResource.GaResource.GetRequest request = service.Data.Ga.Get("ga:" + ProfileId, StartDate, EndDate, Metrics);
+            DataResource.GaResource.GetRequest request = service.Data.Ga.Get("ga:" + profileId, startDate, endDate, metrics);
 
-            if (MyValues == null)
+            if (optionalValues == null)
             {
                 request.MaxResults = 1000;
             }
             else
             {
-                request.MaxResults = MyValues.MaxResults;
-                request.Dimensions = MyValues.Dimensions;
-                request.SamplingLevel = MyValues.Sampling;
-                request.Segment = MyValues.Segment;
-                request.Sort = MyValues.Sort;
-                request.Filters = MyValues.Filter;
+                request.MaxResults = optionalValues.MaxResults;
+                request.Dimensions = optionalValues.Dimensions;
+                request.SamplingLevel = optionalValues.Sampling;
+                request.Segment = optionalValues.Segment;
+                request.Sort = optionalValues.Sort;
+                request.Filters = optionalValues.Filter;
 
             }
             return ProcessResults(request);
