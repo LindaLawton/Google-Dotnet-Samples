@@ -104,9 +104,9 @@ namespace Daimto_Google_Analytics_Sample
         /// <param name="StartDate">Start date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or NdaysAgo where N is a positive integer). </param>
         /// <param name="EndDate">End date for fetching Analytics data. Request can specify an end date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or NdaysAgo where N is a positive integer). </param>
         /// <param name="Metrics">A list of comma-separated metrics, such as ga:sessions,ga:bounces. </param>
-        /// <param name="MyValues">Optional values can be null </param>
+        /// <param name="optionalValues">Optional values can be null </param>
         /// <returns></returns>
-        public static GaData get(AnalyticsService service, string profileId, string startDate, string endDate, string metrics, OptionalValues optionalValues)
+        public static GaData Get(AnalyticsService service, string profileId, string startDate, string endDate, string metrics, OptionalValues optionalValues)
         {
             DataResource.GaResource.GetRequest request = service.Data.Ga.Get(String.Format("ga:{0}", profileId), startDate, endDate, metrics);
             if (optionalValues == null)
