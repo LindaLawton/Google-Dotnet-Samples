@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C072B2E-1B0B-4149-972D-830A5D940129}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Daimto_SiteVerification</RootNamespace>
+    <AssemblyName>Daimto-SiteVerification</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.0\lib\net40\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.0\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.9.0\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.SiteVerification.v1">
+      <HintPath>..\packages\Google.Apis.SiteVerification.v1.1.9.0.380\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.SiteVerification.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.1.10.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

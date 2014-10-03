@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.SiteVerification.v1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest.Site">
+            <summary>The site for which a verification token will be generated.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest.VerificationMethod">
+            <summary>The verification method that will be used to verify this site. For sites, 'FILE' or 'META' methods
+            may be used. For domains, only 'DNS' may be used.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest.SiteData">
+            <summary>The site for which a verification token will be generated.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest.SiteData.Identifier">
+            <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to
+            INET_DOMAIN, the site identifier is a domain name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest.SiteData.Type">
+            <summary>The type of resource to be verified. Can be SITE or INET_DOMAIN (domain name).</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse.Method">
+            <summary>The verification method to use in conjunction with this token. For FILE, the token should be placed
+            in the top-level directory of the site, stored inside a file of the same name. For META, the token should be
+            placed in the HEAD tag of the default page that is loaded for the site. For DNS, the token should be placed
+            in a TXT record of the domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse.Token">
+            <summary>The verification token. The token must be placed appropriately in order for verification to
+            succeed.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse.Items">
+            <summary>The list of sites that are owned by the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.Id">
+            <summary>The string used to identify this site. This value should be used in the "id" portion of the REST
+            URL for the Get, Update, and Delete operations.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.Owners">
+            <summary>The email addresses of all verified owners.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.Site">
+            <summary>The address and type of a site that is verified or will be verified.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.SiteData">
+            <summary>The address and type of a site that is verified or will be verified.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.SiteData.Identifier">
+            <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to
+            INET_DOMAIN, the site identifier is a domain name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.SiteData.Type">
+            <summary>The site type. Can be SITE or INET_DOMAIN (domain name).</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.SiteVerificationService">
+            <summary>The SiteVerification Service.</summary>
+        </member>
+        <member name="F:Google.Apis.SiteVerification.v1.SiteVerificationService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.SiteVerification.v1.SiteVerificationService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.SiteVerificationService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.SiteVerificationService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationService.WebResource">
+            <summary>Gets the WebResource resource.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.SiteVerificationService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the Google Site Verification API.</summary>
+        </member>
+        <member name="F:Google.Apis.SiteVerification.v1.SiteVerificationService.Scope.Siteverification">
+            <summary>Manage the list of sites and domains you control</summary>
+        </member>
+        <member name="F:Google.Apis.SiteVerification.v1.SiteVerificationService.Scope.SiteverificationVerifyOnly">
+            <summary>Manage your new site verifications with Google</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1">
+            <summary>A base abstract class for SiteVerification requests.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new SiteVerificationBaseServiceRequest instance.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.InitParameters">
+            <summary>Initializes SiteVerification parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.Alt">
+            <summary>Data format for the response.</summary>
+            [default: json]
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: false]
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user
+            limits.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.AltEnum">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="F:Google.Apis.SiteVerification.v1.SiteVerificationBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource">
+            <summary>The "webResource" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.SiteVerification.v1.WebResourceResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.Delete(System.String)">
+            <summary>Relinquish ownership of a website or domain.</summary>
+            <param name="id">The id of a verified site or domain.</param>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.Get(System.String)">
+            <summary>Get the most current data for a website or domain.</summary>
+            <param name="id">The id of a verified site or domain.</param>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.GetToken(Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest)">
+            <summary>Get a verification token for placing on a website or domain.</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.Insert(Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource,System.String)">
+            <summary>Attempt verification of a website or domain.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="verificationMethod">The method to use for verifying a site or domain.</param>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.List">
+            <summary>Get the list of your verified websites and domains.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.Patch(Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource,System.String)">
+            <summary>Modify the list of owners for your website or domain. This method supports patch
+            semantics.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="id">The id of a verified site or domain.</param>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.Update(Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource,System.String)">
+            <summary>Modify the list of owners for your website or domain.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="id">The id of a verified site or domain.</param>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest">
+            <summary>Relinquish ownership of a website or domain.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest">
+            <summary>Get the most current data for a website or domain.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest">
+            <summary>Get a verification token for placing on a website or domain.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest)">
+            <summary>Constructs a new GetToken request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.InitParameters">
+            <summary>Initializes GetToken parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest">
+            <summary>Attempt verification of a website or domain.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource,System.String)">
+            <summary>Constructs a new Insert request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.InitParameters">
+            <summary>Initializes Insert parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.VerificationMethod">
+            <summary>The method to use for verifying a site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest">
+            <summary>Get the list of your verified websites and domains.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest">
+            <summary>Modify the list of owners for your website or domain. This method supports patch
+            semantics.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource,System.String)">
+            <summary>Constructs a new Patch request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.InitParameters">
+            <summary>Initializes Patch parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest">
+            <summary>Modify the list of owners for your website or domain.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource,System.String)">
+            <summary>Constructs a new Update request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.InitParameters">
+            <summary>Initializes Update parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+    </members>
+</doc>
