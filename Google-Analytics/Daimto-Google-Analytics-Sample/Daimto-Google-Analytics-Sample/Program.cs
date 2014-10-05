@@ -36,7 +36,7 @@ namespace Daimto_Google_Analytics_Sample
 
 
             //Get account summary and display them.
-            foreach (AccountSummary account in DaimtoAnaltyicsManagmentHelper.AccountSummaryList(service))
+            foreach (AccountSummary account in DaimtoAnaltyicsManagmentHelper.AccountSummaryList(service).Items)
             {
                 // Account
                 Console.WriteLine("Account: " + account.Name + "(" + account.Id + ")");
@@ -69,16 +69,16 @@ namespace Daimto_Google_Analytics_Sample
             {
 
                 // Account
-                Console.WriteLine("Account: " + account.Name + "(" + account.Id + ")");
+                Console.WriteLine(string.Format("Account: {0}({1})", account.Name, account.Id));
                 foreach (Webproperty wp in DaimtoAnaltyicsManagmentHelper.WebpropertyList(service, account.Id))
                 {
                     // Web Properties within that account
-                    Console.WriteLine("\tWeb Property: " + wp.Name + "(" + wp.Id + ")");
+                    Console.WriteLine(string.Format("\tWeb Property: {0}({1})", wp.Name, wp.Id ));
 
                     foreach (Profile profile in DaimtoAnaltyicsManagmentHelper.ProfileList(service, account.Id, wp.Id))
                     {
 
-                        Console.WriteLine("\t\tProfile: " + profile.Name + "(" + profile.Id + ")");
+                        Console.WriteLine(string.Format("\t\tProfile: {0}({1})",profile.Name,profile.Id));
                     }
                 }
             }
@@ -117,6 +117,21 @@ namespace Daimto_Google_Analytics_Sample
             //Make sure the profile id you send is valid.  
             var realTimeData = DaimtoAnaltyicsRealTimeHelper.Get(service, "78110423", "rt:activeUsers", rtOptions);
 
+            foreach (var headers in realTimeData.ColumnHeaders) {
+
+             Console.WriteLine( String.Format("{0} - {1} - {2}", headers.Name ,  headers.ColumnType ,headers.DataType));
+            
+            
+            }
+           
+            foreach (List<string> row in realTimeData.Rows) {
+
+                foreach (string col in row) {
+                    Console.Write(col + " ");  // writes the value of the column
+                }
+                Console.Write("\r\n");
+                
+            }
         }
     }
 }

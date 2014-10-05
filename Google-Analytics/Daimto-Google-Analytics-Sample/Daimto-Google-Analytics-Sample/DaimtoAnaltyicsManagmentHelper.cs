@@ -32,7 +32,7 @@ namespace Daimto_Google_Analytics_Sample
         /// </summary>
         /// <param name="service">Valid authenticated Analytics Service</param>
         /// <returns>List of Account Summaries resource - https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountSummaries</returns>
-        public static List<AccountSummary> AccountSummaryList(AnalyticsService service)
+        public static AccountSummaries AccountSummaryList(AnalyticsService service)
         {
 
             //List all of the activities in the specified collection for the current user.  
@@ -64,6 +64,9 @@ namespace Daimto_Google_Analytics_Sample
                 feed = list.Execute();
 
             }
+
+            feed.Items = allRows;
+
             return allRows;
 
         }
