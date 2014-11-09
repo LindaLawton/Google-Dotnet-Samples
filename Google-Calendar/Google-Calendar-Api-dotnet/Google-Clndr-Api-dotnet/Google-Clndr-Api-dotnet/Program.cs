@@ -26,8 +26,8 @@ namespace Google_Clndr_Api_dotnet
             };
 
             // Authenticate Oauth2
-            String CLIENT_ID = "1046123799103-7mk8g2iok1dv9fphok8v2kv82hiqb0q6.apps.googleusercontent.com";
-            String CLIENT_SECRET = "GeE-cD7PtraV0LqyoxqPnOpv";
+            String CLIENT_ID = "2046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
             // here is where we Request the user to give us access, or use the Refresh Token that was previously stored in %AppData%
             UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets { ClientId = CLIENT_ID, ClientSecret = CLIENT_SECRET }
                                                                 , scopes
