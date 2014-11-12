@@ -7,7 +7,7 @@ using Google.Apis.Calendar.v3.Data;
 
 namespace Google_Clndr_Api_dotnet
 {
-    class DaimtoCalendarListHelper
+   public class DaimtoCalendarListHelper
     {
 
         #region List
@@ -65,7 +65,7 @@ namespace Google_Clndr_Api_dotnet
         }
 
 
-        public static void list(CalendarService service, OptionalValues optionalValues)
+        public static CalendarList list(CalendarService service, OptionalValues optionalValues)
         {
 
             var request = service.CalendarList.List();
@@ -83,7 +83,7 @@ namespace Google_Clndr_Api_dotnet
                 request.MinAccessRole = optionalValues.MinAccessRole;
             }
 
-            CalendarList l = ProcessResults(request);
+            return ProcessResults(request);
 
 
         }
