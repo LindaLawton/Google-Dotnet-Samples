@@ -1,0 +1,692 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Webmasters.v3</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Webmasters.v3.Data.SitemapsListResponse">
+            <summary>List of sitemaps.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.SitemapsListResponse.Sitemap">
+            <summary>Information about a sitemap entry.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.SitemapsListResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.SitesListResponse">
+            <summary>List of sites with access level information.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.SitesListResponse.SiteEntry">
+            <summary>Access level information for a Webmaster Tools site.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.SitesListResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCount">
+            <summary>An entry in a URL crawl errors time series.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCount.Count">
+            <summary>The error count at the given timestamp.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCount.TimestampRaw">
+            <summary>The time (well, date) when errors were detected, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCount.Timestamp">
+            <summary><seealso cref="T:System.DateTime"/> representation of <see cref="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCount.TimestampRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCount.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCountsPerType">
+            <summary>Number of errors per day for a specific error type (defined by platform and category).</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCountsPerType.Category">
+            <summary>The crawl error type.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCountsPerType.Entries">
+            <summary>The error count entries time series.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCountsPerType.Platform">
+            <summary>Corresponding to the user agent that made the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorCountsPerType.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsCountsQueryResponse">
+            <summary>A time series of the number of URL crawl errors per error category and platform.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsCountsQueryResponse.CountPerTypes">
+            <summary>The time series of the number of URL crawl errors for per error category and platform.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsCountsQueryResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.FirstDetectedRaw">
+            <summary>The time the error was first detected, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.FirstDetected">
+            <summary><seealso cref="T:System.DateTime"/> representation of <see cref="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.FirstDetectedRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.LastCrawledRaw">
+            <summary>The time when the URL was last crawled, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.LastCrawled">
+            <summary><seealso cref="T:System.DateTime"/> representation of <see cref="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.LastCrawledRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.PageUrl">
+            <summary>The URL of an error, relative to the site.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.ResponseCode">
+            <summary>The HTTP response code, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.UrlDetails">
+            <summary>Additional details about the URL, set only when calling get().</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSample.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSamplesListResponse">
+            <summary>List of crawl error samples.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSamplesListResponse.UrlCrawlErrorSample">
+            <summary>Information about the sample URL and its crawl error.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlCrawlErrorsSamplesListResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.UrlSampleDetails">
+            <summary>Additional details about the URL, set only when calling get().</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlSampleDetails.ContainingSitemaps">
+            <summary>List of sitemaps pointing at this URL.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlSampleDetails.LinkedFromUrls">
+            <summary>A sample set of URLs linking to this URL.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.UrlSampleDetails.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.WmxSite">
+            <summary>Access level information for a Webmaster Tools site.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSite.PermissionLevel">
+            <summary>The user's permission level for the site.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSite.SiteUrl">
+            <summary>The URL of the site.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSite.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.Contents">
+            <summary>The various content types in the sitemap.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.Errors">
+            <summary>Number of errors in the sitemap - issues with the sitemap itself, that needs to be fixed before it
+            can be processed correctly.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.IsPending">
+            <summary>If true, the sitemap has not been processed.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.IsSitemapsIndex">
+            <summary>If true, the sitemap is a collection of sitemaps.</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Google.Apis.Webmasters.v3.Data.WmxSitemap.LastDownloadedRaw" -->
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.LastDownloaded">
+            <summary><seealso cref="T:System.DateTime"/> representation of <see cref="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.LastDownloadedRaw"/>.</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Google.Apis.Webmasters.v3.Data.WmxSitemap.LastSubmittedRaw" -->
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.LastSubmitted">
+            <summary><seealso cref="T:System.DateTime"/> representation of <see cref="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.LastSubmittedRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.Path">
+            <summary>The url of the sitemap.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.Type">
+            <summary>The type of the sitemap (for example "sitemap").</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.Warnings">
+            <summary>Number of warnings for the sitemap - issues with URLs in the sitemaps.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemap.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.Data.WmxSitemapContent">
+            <summary>Information about the various content types in the sitemap.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemapContent.Indexed">
+            <summary>The number of URLs from the sitemap that were indexed (of the content type).</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemapContent.Submitted">
+            <summary>The number of URLs in the sitemap (of the content type).</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemapContent.Type">
+            <summary>The specific type of content in this sitemap (for example "web", "images").</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.Data.WmxSitemapContent.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.WebmastersService">
+            <summary>The Webmasters Service.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.WebmastersService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.WebmastersService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.WebmastersService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.WebmastersService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.Sitemaps">
+            <summary>Gets the Sitemaps resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.Sites">
+            <summary>Gets the Sites resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.Urlcrawlerrorscounts">
+            <summary>Gets the Urlcrawlerrorscounts resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersService.Urlcrawlerrorssamples">
+            <summary>Gets the Urlcrawlerrorssamples resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.WebmastersService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the Webmaster Tools API.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.WebmastersService.Scope.Webmasters">
+            <summary>View and modify Webmaster Tools data for your verified sites</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.WebmastersService.Scope.WebmastersReadonly">
+            <summary>View Webmaster Tools data for your verified sites</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1">
+            <summary>A base abstract class for Webmasters requests.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new WebmastersBaseServiceRequest instance.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.InitParameters">
+            <summary>Initializes Webmasters parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.Alt">
+            <summary>Data format for the response.</summary>
+            [default: json]
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user
+            limits.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.AltEnum">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.WebmastersBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitemapsResource">
+            <summary>The "sitemaps" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.SitemapsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.Delete(System.String,System.String)">
+             <summary>Deletes a sitemap from this site.</summary>
+             <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+            
+             <param name="feedpath">The URL of the actual sitemap (for example http://www.example.com/sitemap.xml).</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.Get(System.String,System.String)">
+             <summary>Retrieves information about a specific sitemap.</summary>
+             <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+            
+             <param name="feedpath">The URL of the actual sitemap (for example http://www.example.com/sitemap.xml).</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.List(System.String)">
+            <summary>Lists sitemaps uploaded to the site.</summary>
+            <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.Submit(System.String,System.String)">
+             <summary>Submits a sitemap for a site.</summary>
+             <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+            
+             <param name="feedpath">The URL of the sitemap to add.</param>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest">
+            <summary>Deletes a sitemap from this site.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.Feedpath">
+            <summary>The URL of the actual sitemap (for example http://www.example.com/sitemap.xml).</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest">
+            <summary>Retrieves information about a specific sitemap.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.Feedpath">
+            <summary>The URL of the actual sitemap (for example http://www.example.com/sitemap.xml).</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest">
+            <summary>Lists sitemaps uploaded to the site.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.SitemapIndex">
+            <summary>A URL of a site's sitemap index.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest">
+            <summary>Submits a sitemap for a site.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
+            <summary>Constructs a new Submit request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.InitParameters">
+            <summary>Initializes Submit parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.Feedpath">
+            <summary>The URL of the sitemap to add.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitemapsResource.SubmitRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitesResource">
+            <summary>The "sites" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.SitesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.Add(System.String)">
+            <summary>Adds a site to the set of the user's sites in Webmaster Tools.</summary>
+            <param name="siteUrl">The URL of the site to add.</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.Delete(System.String)">
+            <summary>Removes a site from the set of the user's Webmaster Tools sites.</summary>
+            <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.Get(System.String)">
+            <summary>Retrieves information about specific site.</summary>
+            <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.List">
+            <summary>Lists your Webmaster Tools sites.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitesResource.AddRequest">
+            <summary>Adds a site to the set of the user's sites in Webmaster Tools.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.AddRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Add request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.AddRequest.InitParameters">
+            <summary>Initializes Add parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.AddRequest.SiteUrl">
+            <summary>The URL of the site to add.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.AddRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.AddRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.AddRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest">
+            <summary>Removes a site from the set of the user's Webmaster Tools sites.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitesResource.GetRequest">
+            <summary>Retrieves information about specific site.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.GetRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.SitesResource.ListRequest">
+            <summary>Lists your Webmaster Tools sites.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.ListRequest.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.SitesResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.SitesResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource">
+            <summary>The "urlcrawlerrorscounts" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.Query(System.String)">
+            <summary>Retrieves a time series of the number of URL crawl errors per error category and
+            platform.</summary>
+            <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest">
+            <summary>Retrieves a time series of the number of URL crawl errors per error category and
+            platform.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Query request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.InitParameters">
+            <summary>Initializes Query parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.Category">
+            <summary>The crawl error category, for example 'serverError'. If not specified, we return results for
+            all categories.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.Platform">
+            <summary>The user agent type (platform) that made the request, for example 'web'. If not specified, we
+            return results for all platforms.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.LatestCountsOnly">
+            <summary>If true, returns only the latest crawl error counts.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.CategoryEnum">
+            <summary>The crawl error category, for example 'serverError'. If not specified, we return results for
+            all categories.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorscountsResource.QueryRequest.PlatformEnum">
+            <summary>The user agent type (platform) that made the request, for example 'web'. If not specified, we
+            return results for all platforms.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource">
+            <summary>The "urlcrawlerrorssamples" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.Get(System.String,System.String,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.CategoryEnum,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.PlatformEnum)">
+             <summary>Retrieves details about crawl errors for a site's sample URL.</summary>
+             <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+            
+             <param name="url">The relative path (without the site) of the sample URL; must be one of the URLs returned by
+             list</param>
+             <param name="category">The crawl error category, for example 'authPermissions'</param>
+            
+             <param name="platform">The user agent type (platform) that made the request, for example 'web'</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.List(System.String,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.CategoryEnum,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.PlatformEnum)">
+             <summary>Lists a site's sample URLs for the specified crawl error category and platform.</summary>
+             <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+            
+             <param name="category">The crawl error category, for example 'authPermissions'</param>
+             <param
+             name="platform">The user agent type (platform) that made the request, for example 'web'</param>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixed(System.String,System.String,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.CategoryEnum,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.PlatformEnum)">
+             <summary>Marks the provided site's sample URL as fixed, and removes it from the samples list.</summary>
+             <param name="siteUrl">The site's URL, including protocol, for example 'http://www.example.com/'</param>
+            
+             <param name="url">The relative path (without the site) of the sample URL; must be one of the URLs returned by
+             list</param>
+             <param name="category">The crawl error category, for example 'authPermissions'</param>
+            
+             <param name="platform">The user agent type (platform) that made the request, for example 'web'</param>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest">
+            <summary>Retrieves details about crawl errors for a site's sample URL.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.CategoryEnum,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.PlatformEnum)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.Url">
+            <summary>The relative path (without the site) of the sample URL; must be one of the URLs returned by
+            list</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.Category">
+            <summary>The crawl error category, for example 'authPermissions'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.Platform">
+            <summary>The user agent type (platform) that made the request, for example 'web'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.CategoryEnum">
+            <summary>The crawl error category, for example 'authPermissions'</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.GetRequest.PlatformEnum">
+            <summary>The user agent type (platform) that made the request, for example 'web'</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest">
+            <summary>Lists a site's sample URLs for the specified crawl error category and platform.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.CategoryEnum,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.PlatformEnum)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.Category">
+            <summary>The crawl error category, for example 'authPermissions'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.Platform">
+            <summary>The user agent type (platform) that made the request, for example 'web'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.CategoryEnum">
+            <summary>The crawl error category, for example 'authPermissions'</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.ListRequest.PlatformEnum">
+            <summary>The user agent type (platform) that made the request, for example 'web'</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest">
+            <summary>Marks the provided site's sample URL as fixed, and removes it from the samples list.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.CategoryEnum,Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.PlatformEnum)">
+            <summary>Constructs a new MarkAsFixed request.</summary>
+        </member>
+        <member name="M:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.InitParameters">
+            <summary>Initializes MarkAsFixed parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.SiteUrl">
+            <summary>The site's URL, including protocol, for example 'http://www.example.com/'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.Url">
+            <summary>The relative path (without the site) of the sample URL; must be one of the URLs returned by
+            list</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.Category">
+            <summary>The crawl error category, for example 'authPermissions'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.Platform">
+            <summary>The user agent type (platform) that made the request, for example 'web'</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.CategoryEnum">
+            <summary>The crawl error category, for example 'authPermissions'</summary>
+        </member>
+        <member name="T:Google.Apis.Webmasters.v3.UrlcrawlerrorssamplesResource.MarkAsFixedRequest.PlatformEnum">
+            <summary>The user agent type (platform) that made the request, for example 'web'</summary>
+        </member>
+    </members>
+</doc>
