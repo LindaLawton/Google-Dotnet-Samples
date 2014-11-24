@@ -103,7 +103,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication.cs" />
+    <Compile Include="DaimtoCalendarHelper.cs" />
     <Compile Include="DaimtoCalendarListHelper.cs" />
+    <Compile Include="DaimtoEventHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
