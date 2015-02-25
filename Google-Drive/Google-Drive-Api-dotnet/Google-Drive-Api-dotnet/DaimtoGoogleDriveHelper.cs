@@ -6,7 +6,7 @@ using Google.Apis.Drive.v2;
 using Google.Apis.Drive.v2.Data;
 using System.Net;
 
-namespace Google_Drive_Api_dotnet
+namespace Daimto.Drive.api
 {
     public class DaimtoGoogleDriveHelper
     {
@@ -74,7 +74,7 @@ namespace Google_Drive_Api_dotnet
                 body.Description = "File uploaded by Diamto Drive Sample";
                 body.MimeType = GetMimeType(_uploadFile);
                 body.Parents = new List<ParentReference>() { new ParentReference() { Id = _parent } };
-
+                                
                 // File's content.
                 byte[] byteArray = System.IO.File.ReadAllBytes(_uploadFile);
                 System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArray);

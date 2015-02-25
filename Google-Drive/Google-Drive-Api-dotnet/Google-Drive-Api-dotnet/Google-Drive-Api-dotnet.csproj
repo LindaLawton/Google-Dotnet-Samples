@@ -8,8 +8,8 @@
     <ProjectGuid>{D5B103DD-9779-433F-8A67-DC9B37EE06FF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Google_Drive_Api_dotnet</RootNamespace>
-    <AssemblyName>Google-Drive-Api-dotnet</AssemblyName>
+    <RootNamespace>Daimto.Drive.api</RootNamespace>
+    <AssemblyName>Daimto Drive Sample</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -103,6 +103,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication.cs" />
     <Compile Include="DaimtoGoogleDriveHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
