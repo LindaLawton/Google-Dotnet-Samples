@@ -17,7 +17,7 @@ SETUP
    3. Client ID for web application: 
       * Client id, Client Secrete will be used in the code.  Make sure to set Redirect URI corectly. 
 3. Nuget Package: <a href="https://www.nuget.org/packages/Google.Apis.Drive.v2/">Google.Apis.Drive.v2</a>
-   *PM> Install-Package Google.Apis.Drive.v2
+    1. PM> Install-Package Google.Apis.Drive.v2
 
 
 Note:  Projects where created in visual studio 10.  
