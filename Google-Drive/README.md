@@ -1,3 +1,6 @@
+
+![alt tag](https://www.google.com/drive/images/drive/logo-drive.png)
+
 ﻿Diamto Google Drive .Net Samples
 =================================
 
@@ -38,7 +41,7 @@ Three part tutorial series:
 
 Links
 ===========================================
-* Google Drive api Refrence:  https://developers.google.com/drive/v2/reference/
-* Google Dot net client Library:  https://code.google.com/p/google-api-dotnet-client/
-* Using OAuth 2.0 to Access Google APIs :  https://developers.google.com/accounts/docs/OAuth2
-
+* [Google Drive api Refrence](https://developers.google.com/drive/v2/reference/)
+* [Google Dot net client Library](https://code.google.com/p/google-api-dotnet-client/)
+* [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/accounts/docs/OAuth2)
+* [StackOverflow Google drive sdk](http://stackoverflow.com/questions/tagged/google-drive-sdk)
