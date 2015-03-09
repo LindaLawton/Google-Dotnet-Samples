@@ -19,7 +19,7 @@ namespace Diamto.Authentication
             PlusService service;
 
             // Authenticate Oauth2
-            String CLIENT_ID = "1046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_ID = "2046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
             String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
 
 
