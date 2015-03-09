@@ -1,6 +1,0 @@
-C:\Users\linda_l\Documents\GitHub\Google-Dotnet-Samples\Autentication\Diamto.Google.Authentication\Diamto.Google.Autentication\bin\Debug\Diamto.Authentication.exe.config
-C:\Users\linda_l\Documents\GitHub\Google-Dotnet-Samples\Autentication\Diamto.Google.Authentication\Diamto.Google.Autentication\obj\x86\Debug\Diamto.Authentication.exe
-C:\Users\linda_l\Documents\GitHub\Google-Dotnet-Samples\Autentication\Diamto.Google.Authentication\Diamto.Google.Autentication\obj\x86\Debug\Diamto.Authentication.pdb
-C:\Users\linda_l\Documents\GitHub\Google-Dotnet-Samples\Autentication\Diamto.Google.Authentication\Diamto.Google.Authentication\bin\Debug\Diamto.Authentication.exe.config
-C:\Users\linda_l\Documents\GitHub\Google-Dotnet-Samples\Autentication\Diamto.Google.Authentication\Diamto.Google.Authentication\obj\x86\Debug\Diamto.Authentication.exe
-C:\Users\linda_l\Documents\GitHub\Google-Dotnet-Samples\Autentication\Diamto.Google.Authentication\Diamto.Google.Authentication\obj\x86\Debug\Diamto.Authentication.pdb
