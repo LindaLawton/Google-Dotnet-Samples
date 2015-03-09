@@ -16,88 +16,36 @@ namespace Diamto.Authentication
     {
         static void Main(string[] args)
         {
-            // authentication 
-            // nuget install-package Google.Apis
-            // install-package Google.Apis.Auth
+            PlusService service;
 
-            string[] scopes = new string[] {
-               // PlusService.Scope.PlusMe,  The https://www.googleapis.com/auth/plus.me scope is not recommended as a login scope because, for users who have not upgraded to Google+, it does not return the user's name or email address.
-                PlusService.Scope.PlusLogin,
-                PlusService.Scope.UserinfoEmail,
-                PlusService.Scope.UserinfoProfile};
+            // Authenticate Oauth2
+            String CLIENT_ID = "1046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
 
-            string _client_id = "1046123799103-7mk8g2iok1dv9fphok8v2kv82hiqb0q6.apps.googleusercontent.com";
-            string _client_secret = "GeE-cD7PtraV0LqyoxqPnOpv";
 
-            
+            //This is a pure Oauth2 Example
+            //service = Authentication.Authenticaton.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
 
-         
-            UserCredential credential = null;
-            
 
-            try
+            // Basic example for use with DatabaseDataStore
+            //var dbDatastore = new DatabaseDataStore(@"LINDAL\SQL2012", "LindaTest", "test123", "test", "test");
+            //service = Authentication.Authenticaton.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test", dbDatastore);
+
+
+            //Storeing the file in a diffrent directory the %appData%
+            string filename = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Daimto.Auth.Store\Google.Apis.Auth.OAuth2.Responses.TokenResponse-" + Environment.UserName;
+
+            var localfileDatastore = new LocalFileDataStore(filename);
+            service = Authentication.Authenticaton.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test", localfileDatastore);
+
+            // Getting a list of ALL a users public activities.
+            IList<Activity> _Activities = GetAllActivities(service, "me");
+
+            foreach (Activity item in _Activities)
             {
-                // here is where we Request the user to give us access, or use the Refresh Token that was previously stored in %AppData%
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets { ClientId = _client_id, ClientSecret = _client_secret },
-                                                                                     scopes,
-                                                                                     Environment.UserName,
-                                                                                     CancellationToken.None,
-                                                                                  //   new LocalFileDataStore("Daimto.Auth.Store")).Result;
-                                                                                    new DatabaseDataStore(@"LINDAL-PC2013\SQL2012", "LindaTest", "test123", "test", "test")).Result;
 
-            }
-            catch (Exception ex)
-            {
-                //If the user hits cancel you wont get access.
-                if (ex.InnerException.Message.IndexOf("access_denied") != -1)
-                {
-                    Console.WriteLine("User declined access");
-                    Console.ReadLine();
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("Unknown Authentication Error:" + ex.Message);
-                    Console.ReadLine();
-                    return;
-                }
-            }
-            finally {
-
-                string filename = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Daimto.Auth.Store\Google.Apis.Auth.OAuth2.Responses.TokenResponse-" + Environment.UserName;
-
-                Console.WriteLine("refreshToken:" + credential.Token.RefreshToken);
-                Console.WriteLine("AccessToken:" + credential.Token.AccessToken);
-
-                Console.WriteLine("");
-                Console.WriteLine("FileDatastore:" + filename);
-                Console.WriteLine("");
-               
-                using (StreamReader sr = new StreamReader(filename))
-                {
-                    String line = sr.ReadToEnd();
-                    Console.WriteLine(line);
-                }
-
-                // Now we create a Google service. All of our requests will be run though this.
-                PlusService service = new PlusService(new BaseClientService.Initializer()
-                {
-                    HttpClientInitializer = credential,
-                    ApplicationName = "Google Plus Sample",
-                });
-
-                int i = 1;
-                // Getting a list of ALL a users public activities.
-                IList<Activity> _Activities = GetAllActivities(service, "me");
-
-                foreach (Activity item in _Activities)
-                {
-
-                    Console.WriteLine(item.Actor.DisplayName + " Plus 1s: " + item.Object.Plusoners.TotalItems + " comments: " + item.Object.Replies.TotalItems);
-                }
-            }
-
-            int o = 1;
+                Console.WriteLine(item.Actor.DisplayName + " Plus 1s: " + item.Object.Plusoners.TotalItems + " comments: " + item.Object.Replies.TotalItems);
+            }         
 
 
 
