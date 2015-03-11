@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daimto-Google-Analytics-Sample", "Daimto-Google-Analytics-Sample\Daimto-Google-Analytics-Sample.csproj", "{AE2714CB-94E0-4410-B652-D72F18A4AE00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daimto.GoogleSample.Analytics", "Daimto-Google-Analytics-Sample\Daimto.GoogleSample.Analytics.csproj", "{AE2714CB-94E0-4410-B652-D72F18A4AE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Google.Apis.Analytics.v3;
 using Google.Apis.Analytics.v3.Data;
 
-namespace Daimto_Google_Analytics_Sample
+namespace Daimto.Google.Sample.Analytics
 {
     public class DaimtoAnaltyicsMetaDataHelper
     {

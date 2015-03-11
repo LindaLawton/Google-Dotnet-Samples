@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 using Google.Apis.Analytics.v3;
 using Google.Apis.Auth.OAuth2;
-using System.Threading;
-using Google.Apis.Util.Store;
 using Google.Apis.Services;
-using System.Security.Cryptography.X509Certificates;
-using System.IO;
+using Google.Apis.Util.Store;
 
-namespace Daimto_Google_Analytics_Sample
+namespace Daimto.Google.Sample.Analytics
 {
     public class DaimtoAnalyticsAuthenticationHelper
     {

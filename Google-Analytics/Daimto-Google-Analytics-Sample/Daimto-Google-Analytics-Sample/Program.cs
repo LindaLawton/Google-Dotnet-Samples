@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Google.Apis.Auth.OAuth2;
-using System.Threading;
-using Google.Apis.Util.Store;
 using Google.Apis.Analytics.v3;
-using Google.Apis.Services;
 using Google.Apis.Analytics.v3.Data;
 
 //Target framework 4.0
 //Nuget package http://www.nuget.org/packages/Google.Apis.Analytics.v3
 //pm> Install-Package Google.Apis.Analytics.v3 
 
-namespace Daimto_Google_Analytics_Sample
+namespace Daimto.Google.Sample.Analytics
 {
     class Program
     {
@@ -23,12 +18,12 @@ namespace Daimto_Google_Analytics_Sample
 
 
             // Authenticate Oauth2
-            String CLIENT_ID = "1046123799103-7mk8g2iok1dv9fphok8v2kv82hiqb0q6.apps.googleusercontent.com";
-            String CLIENT_SECRET = "GeE-cD7PtraV0LqyoxqPnOpv";
+            String CLIENT_ID = "1046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
             service = DaimtoAnalyticsAuthenticationHelper.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
 
             //// Service account Authentication 
-            //String SERVICE_ACCOUNT_EMAIL = "1046123799103-nk421gjc2v8mlr2qnmmqaak04ntb1dbp@developer.gserviceaccount.com";
+            //String SERVICE_ACCOUNT_EMAIL = "1046123799103-6v9cj8jbub068jgmss54m9gkuk4q2qu8.apps.googleusercontent.com";
             //string SERVICE_ACCOUNT_KEYFILE = @"c:\Diamto Test Everything Project-5381f306d5a1.p12";
             //Service = DaimtoAnalyticsAuthenticationHelper.AuthenticateServiceAccount(SERVICE_ACCOUNT_EMAIL, SERVICE_ACCOUNT_KEYFILE);
 
@@ -132,6 +127,11 @@ namespace Daimto_Google_Analytics_Sample
                 Console.Write("\r\n");
                 
             }
+
+
+            Console.ReadLine();
         }
+
+       
     }
 }
