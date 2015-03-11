@@ -18,12 +18,12 @@ namespace Daimto.Google.Sample.Analytics
 
 
             // Authenticate Oauth2
-            String CLIENT_ID = "1046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_ID = "2046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
             String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
             service = DaimtoAnalyticsAuthenticationHelper.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
 
             //// Service account Authentication 
-            //String SERVICE_ACCOUNT_EMAIL = "1046123799103-6v9cj8jbub068jgmss54m9gkuk4q2qu8.apps.googleusercontent.com";
+            //String SERVICE_ACCOUNT_EMAIL = "2046123799103-6v9cj8jbub068jgmss54m9gkuk4q2qu8.apps.googleusercontent.com";
             //string SERVICE_ACCOUNT_KEYFILE = @"c:\Diamto Test Everything Project-5381f306d5a1.p12";
             //Service = DaimtoAnalyticsAuthenticationHelper.AuthenticateServiceAccount(SERVICE_ACCOUNT_EMAIL, SERVICE_ACCOUNT_KEYFILE);
 
@@ -40,7 +40,8 @@ namespace Daimto.Google.Sample.Analytics
                 {
 
                     // Web Properties within that account
-                    Console.WriteLine("\tWeb Property: " + wp.Name + "(" + wp.Id + ")");
+                   Console.WriteLine("\tWeb Property: " + wp.Name + "(" + wp.Id + ")");
+
 
                     //Don't forget to check its not null. Believe it or not it could be.  
                     if (wp.Profiles != null)
