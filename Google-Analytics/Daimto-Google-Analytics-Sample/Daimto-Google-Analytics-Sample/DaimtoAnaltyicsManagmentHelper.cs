@@ -20,7 +20,7 @@ using System.Text;
 using Google.Apis.Analytics.v3;
 using Google.Apis.Analytics.v3.Data;
 
-namespace Daimto_Google_Analytics_Sample
+namespace Daimto.Google.Sample.Analytics
 {
     public class DaimtoAnaltyicsManagmentHelper
     {
@@ -67,7 +67,7 @@ namespace Daimto_Google_Analytics_Sample
 
             feed.Items = allRows;
 
-            return allRows;
+            return feed;
 
         }
         #endregion
