@@ -15,13 +15,13 @@
  */
 
 using System;
-using Google.Apis.Drive.v2;
-using Google.Apis.Auth.OAuth2;
-using System.Threading;
-using Google.Apis.Util.Store;
-using Google.Apis.Services;
-using System.Security.Cryptography.X509Certificates;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v2;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
 
 namespace Daimto.Drive.api
 {

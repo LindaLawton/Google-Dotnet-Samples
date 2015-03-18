@@ -1,10 +1,5 @@
 ﻿using System;
-
 using Google.Apis.Drive.v2;
-using Google.Apis.Auth.OAuth2;
-using System.Threading;
-using Google.Apis.Util.Store;
-using Google.Apis.Services;
 using Google.Apis.Drive.v2.Data;
 using System.Collections.Generic;
 
@@ -15,15 +10,15 @@ namespace Daimto.Drive.api
         static void Main(string[] args)
         {
             // Connect with Oauth2 Ask user for permission
-            String CLIENT_ID = "2046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_ID = "1046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
             String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";      
-           // DriveService service = Authentication.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, Environment.UserName);
+            DriveService service = Authentication.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, Environment.UserName);
 
 
             // connect with a Service Account
-            string ServiceAccountEmail = "2046123799103-6v9cj8jbub068jgmss54m9gkuk4q2qu8@developer.gserviceaccount.com";
-            string serviceAccountkeyFile = @"C:\GoogleDevelop\Diamto Test Everything Project-78049f608668.p12";
-            DriveService service = Authentication.AuthenticateServiceAccount(ServiceAccountEmail, serviceAccountkeyFile);
+            //string ServiceAccountEmail = "1046123799103-6v9cj8jbub068jgmss54m9gkuk4q2qu8@developer.gserviceaccount.com";
+            //string serviceAccountkeyFile = @"C:\GoogleDevelop\Diamto Test Everything Project-78049f608668.p12";
+            //DriveService service = Authentication.AuthenticateServiceAccount(ServiceAccountEmail, serviceAccountkeyFile);
 
             if (service == null)
             {

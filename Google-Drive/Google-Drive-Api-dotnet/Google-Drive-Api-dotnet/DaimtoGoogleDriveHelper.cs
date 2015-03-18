@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Google.Apis.Drive.v2;
 using Google.Apis.Drive.v2.Data;
-using System.Net;
 
 namespace Daimto.Drive.api
 {
