@@ -51,51 +51,7 @@ namespace Daimto_Blogger_Sample
 
         }
 
-        /// <summary>
-        /// Authenticating to Google using a Service account   
-        /// Documentation: https://developers.google.com/accounts/docs/OAuth2#serviceaccount
-        /// </summary>
-        /// <param name="serviceAccountEmail">From Google Developer console https://console.developers.google.com</param>
-        /// <param name="keyFilePath">Location of the Service account key file downloaded from Google Developer console https://console.developers.google.com</param>
-        /// <returns></returns>
-        public static BloggerService AuthenticateServiceAccount(string serviceAccountEmail, string keyFilePath)
-        {
-
-            // check the file exists
-            if (!File.Exists(keyFilePath))
-            {
-                Console.WriteLine("An Error occurred - Key file does not exist");
-                return null;    
-            }
-
-          string[] scopes = new string[] { BloggerService.Scope.Blogger,  // view and manage your analytics data                                            
-                                             BloggerService.Scope.BloggerReadonly};     // View your Blogs         
-
-            var certificate = new X509Certificate2(keyFilePath, "notasecret", X509KeyStorageFlags.Exportable);
-            try
-            {
-                ServiceAccountCredential credential = new ServiceAccountCredential(
-                    new ServiceAccountCredential.Initializer(serviceAccountEmail)
-                   {
-                       Scopes = scopes
-                   }.FromCertificate(certificate));
-
-                // Create the service.
-                BloggerService service = new BloggerService(new BaseClientService.Initializer()
-                {
-                    HttpClientInitializer = credential,
-                    ApplicationName = "Blogger API Sample",
-                });
-                return service;
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.InnerException);
-                return null;
-
-            }
-        }
+        
 
 
 

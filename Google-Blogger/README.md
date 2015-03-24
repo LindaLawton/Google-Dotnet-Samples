@@ -17,7 +17,8 @@ SETUP
    1. Oauth2:  APIs & auth -> Credentials:  Client ID for native application 
       *  Client id and Client Secret will be used in the code
    2. Service Account:  Service Account  
-      *  P12 key file and Email Address will be used in the code.
+      *  It is not posible to use a service account with Blogger.  Blogger requires people using Blogger to 
+	     agree to their Terms of Service, and Service Accounts can't accept them.
    3. Client ID for web application: 
       * Client id, Client Secrete will be used in the code.  Make sure to set Redirect URI corectly. 
 3. Nuget Package: <a href="https://www.nuget.org/packages/Google.Apis.Blogger.v3/">Google.Apis.Blogger.v3</a>
