@@ -19,7 +19,7 @@ namespace Diamto.Authentication
             PlusService service;
 
             // Authenticate Oauth2
-            String CLIENT_ID = "2046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
+            String CLIENT_ID = "9046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
             String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
 
 
@@ -28,7 +28,7 @@ namespace Diamto.Authentication
 
 
             // Basic example for use with DatabaseDataStore
-            //var dbDatastore = new DatabaseDataStore(@"LINDAL\SQL2012", "LindaTest", "test123", "test", "test");
+            //var dbDatastore = new DatabaseDataStore(@"HPUser", "LindaTest", "test123", "test", "test");
             //service = Authentication.Authenticaton.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test", dbDatastore);
 
 
