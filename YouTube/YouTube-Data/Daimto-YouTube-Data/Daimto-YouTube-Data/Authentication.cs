@@ -9,7 +9,7 @@ using Google.Apis.Util.Store;
 
 namespace Daimto_YouTube_Data
 {
-   public class Authentication
+    public class Authentication
     {
 
         /// <summary>
@@ -22,13 +22,13 @@ namespace Daimto_YouTube_Data
         /// <returns></returns>
         public static YouTubeService AuthenticateOauth(string clientId, string clientSecret, string userName)
         {
-            
+
             string[] scopes = new string[] { YouTubeService.Scope.Youtube,  // view and manage your YouTube account
                                              YouTubeService.Scope.YoutubeForceSsl,
                                              YouTubeService.Scope.Youtubepartner,
                                              YouTubeService.Scope.YoutubepartnerChannelAudit,
                                              YouTubeService.Scope.YoutubeReadonly,
-                                             YouTubeService.Scope.YoutubeUpload}; 
+                                             YouTubeService.Scope.YoutubeUpload};
 
             try
             {
@@ -55,11 +55,36 @@ namespace Daimto_YouTube_Data
 
         }
 
-        
+        /// <summary>
+        /// using Public APi key
+        /// Documentation https://developers.google.com/accounts/docs/OAuth2
+        /// </summary>
+        /// <param name="clientId">From Google Developer console https://console.developers.google.com</param>
+        /// <param name="clientSecret">From Google Developer console https://console.developers.google.com</param>
+        /// <param name="userName">A string used to identify a user.</param>
+        /// <returns></returns>
+        public static YouTubeService AuthenticateOauth(string apiKey)
+        {
+            try
+            {
+                YouTubeService service = new YouTubeService(new YouTubeService.Initializer()
+                {
+                    ApiKey = apiKey,
+                    ApplicationName = "YouTube Data API Sample",
+                });
+                return service;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.InnerException);
+                return null;
+            }
+
+        }
 
 
 
     }
 
-    }
+}
 
