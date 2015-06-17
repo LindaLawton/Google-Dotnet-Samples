@@ -19,7 +19,11 @@ namespace Daimto_YouTube_Data
             //YouTubeService service = Authentication.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
 
 
-            var service = Authentication.AuthenticateOauth("BIzaSyDuis0IF8wFajmmARCqp7YdqkLmd1XYx7c");
+            var service = Authentication.AuthenticateOauth("AIzaSyDuis0IF8wFajmmARCqp7YdqkLmd1XYx7c");
+
+            var videoCatagories = service.VideoCategories.List("snippet");
+            videoCatagories.RegionCode = "IL";
+            var result = videoCatagories.Execute();
 
             var searchListRequest = service.Search.List("snippet");
             searchListRequest.Q = "Google"; // Replace with your search term.
