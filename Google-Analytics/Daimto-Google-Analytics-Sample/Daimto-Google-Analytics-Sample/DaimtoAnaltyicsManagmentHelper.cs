@@ -708,7 +708,7 @@ namespace Daimto.Google.Sample.Analytics
         /// <param name="accountId">Account Id </param>
         /// <param name="webPropertyId">Web property Id</param>
         /// <returns>CCustomMetric resource https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics#resource </returns>
-        public static IList<CustomMetric> CustomDimensionList(AnalyticsService service, string accountId, string webPropertyId)
+        public static IList<CustomMetric> CustomMetricList(AnalyticsService service, string accountId, string webPropertyId)
         {
 
             ManagementResource.CustomMetricsResource.ListRequest list = service.Management.CustomMetrics.List(accountId, webPropertyId);
