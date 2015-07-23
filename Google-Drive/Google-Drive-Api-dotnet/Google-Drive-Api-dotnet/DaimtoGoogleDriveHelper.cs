@@ -78,6 +78,7 @@ namespace Daimto.Drive.api
                 try
                 {
                     FilesResource.InsertMediaUpload request = _service.Files.Insert(body, stream, GetMimeType(_uploadFile));
+                    //request.Convert = true;   // uncomment this line if you want files to be converted to Drive format
                     request.Upload();
                     return request.ResponseBody;
                 }
