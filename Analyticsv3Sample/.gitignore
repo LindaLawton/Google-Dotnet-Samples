@@ -1,0 +1,10 @@
+[Bb]in
+[Oo]bj
+[Pp]ackages
+[Dd]ebug*/**
+[Rr]elease*/**
+
+Backup*
+*.suo
+*.user
+*.xml
