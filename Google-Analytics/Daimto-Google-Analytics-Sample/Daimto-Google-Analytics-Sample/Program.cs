@@ -105,13 +105,13 @@ namespace Daimto.Google.Sample.Analytics
             DaimtoAnaltyicsReportingHelper.OptionalValues options = new DaimtoAnaltyicsReportingHelper.OptionalValues();
             options.Dimensions = "ga:date";
             //Make sure the profile id you send is valid.  
-            var x = DaimtoAnaltyicsReportingHelper.Get(service, "78110423", "10daysAgo", "today", "ga:sessions", options);
+            var x = DaimtoAnaltyicsReportingHelper.Get(service, "YOUR_VIEW_ID", "10daysAgo", "today", "ga:sessions", options);
 
 
             DaimtoAnaltyicsRealTimeHelper.OptionalValues rtOptions = new DaimtoAnaltyicsRealTimeHelper.OptionalValues();
             options.Dimensions = "rt:userType";
             //Make sure the profile id you send is valid.  
-            var realTimeData = DaimtoAnaltyicsRealTimeHelper.Get(service, "78110423", "rt:activeUsers", rtOptions);
+            var realTimeData = DaimtoAnaltyicsRealTimeHelper.Get(service, "YOUR_VIEW_ID", "rt:activeUsers", rtOptions);
 
             foreach (var headers in realTimeData.ColumnHeaders) {
 
