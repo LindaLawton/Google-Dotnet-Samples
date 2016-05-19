@@ -24,7 +24,7 @@ namespace Google.mail.DotNet
            
             try
             {
-               UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets { ClientId = _client_id, ClientSecret = _client_secret },
+               result.credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets { ClientId = _client_id, ClientSecret = _client_secret },
                                                                          new[] {"https://mail.google.com/ email" },
                                                                          "Lindau",
                                                                          CancellationToken.None,
