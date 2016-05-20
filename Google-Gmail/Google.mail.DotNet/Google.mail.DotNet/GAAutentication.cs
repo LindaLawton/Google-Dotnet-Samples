@@ -21,19 +21,23 @@ namespace Google.mail.DotNet
         public static GAAutentication Autenticate(string _client_id, string _client_secret)
         {
             GAAutentication result = new GAAutentication();
+
+            //If you want to test new gmail account, 
+            //Go to the browser, log off, log in with the new account, 
+            //and then change this 'tmpUser'
+            var tmpUser = "JaiderNet";
            
             try
             {
-               result.credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets { ClientId = _client_id, ClientSecret = _client_secret },
+                result.credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets { ClientId = _client_id, ClientSecret = _client_secret },
                                                                          new[] {"https://mail.google.com/ email" },
-                                                                         "Lindau",
+                                                                         tmpUser,
                                                                          CancellationToken.None,
                                                                          new FileDataStore("Analytics.Auth.Store")).Result;
             }
             catch (Exception ex)
-            {
+            { 
 
-                int i = 1;
             }
 
             if (result.credential != null)
@@ -54,8 +58,41 @@ namespace Google.mail.DotNet
                 // which is important (for Gmail at least)
                 ImapClient ic = new ImapClient("imap.gmail.com", myAccountEmail.Value, result.credential.Token.AccessToken,
                                 ImapClient.AuthMethods.SaslOAuth, 993, true);
+               
+                var listOfMainboxes = ic.ListMailboxes(string.Empty, "*");
+                Console.WriteLine("ListMailboxes");
+                foreach (Mailbox mb in listOfMainboxes)
+                {
+                    Console.WriteLine(mb.Name);
+                    var original = Console.ForegroundColor;
+
+                    var examine = ic.Examine(mb.Name);
+                    if (examine != null)
+                    {
+                        //Count?
+                        ic.SelectMailbox(mb.Name);
+                        Console.WriteLine(" - Count: " + ic.GetMessageCount());
+
+                        //Get One Email per folder
+                        MailMessage[] mm = ic.GetMessages(0, 0);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        foreach (MailMessage m in mm)
+                        {
+                            Console.WriteLine(" - " + m.Subject + " " + m.Date);
+                        }
+                        Console.ForegroundColor = original;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Error.WriteLine("* Folder doesn't exists: " + mb.Name);
+                        Console.ForegroundColor = original;
+                    }
+                }
+                /*
                 // Select a mailbox. Case-insensitive
                 ic.SelectMailbox("INBOX");
+
                 Console.WriteLine(ic.GetMessageCount());
                 // Get the first *11* messages. 0 is the first message;
                 // and it also includes the 10th message, which is really the eleventh ;)
@@ -66,6 +103,7 @@ namespace Google.mail.DotNet
                     Console.WriteLine(m.Subject + " " + m.Date.ToString());
                 }
                 // Probably wiser to use a using statement
+                */
                 ic.Dispose();
             }
             return result;
