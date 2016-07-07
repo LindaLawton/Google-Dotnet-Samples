@@ -15,9 +15,8 @@ namespace Google.mail.DotNet
             string _client_secret = "GeE-cD7PtraV0LqyoxqPnOpv";
 
             GAAutentication Autentication = GAAutentication.Autenticate(_client_id, _client_secret);
-            int i = 1;
 
-
+            Console.ReadKey();
         }
     }
 }
