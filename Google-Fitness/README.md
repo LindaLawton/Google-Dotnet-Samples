@@ -1,3 +1,6 @@
+![alt tag](https://github.com/fassetar/Google-Dotnet-Samples/blob/master/Google-Fitness/gfitness.png)
+
+
 ﻿Diamto Google Fitnes .Net Samples
 =================================
 

@@ -18,14 +18,14 @@ namespace Daimto.Google.Sample.Analytics
 
 
             // Authenticate Oauth2
-            String CLIENT_ID = "2046123799103-d0vpdthl4ms0soutcrpe036ckqn7rfpn.apps.googleusercontent.com";
-            String CLIENT_SECRET = "NDmluNfTgUk6wgmy7cFo64RV";
+            string CLIENT_ID = "YOUR_CLIENT_ID";
+            string CLIENT_SECRET = "YOUR_CLIENT_SECRET";
             service = DaimtoAnalyticsAuthenticationHelper.AuthenticateOauth(CLIENT_ID, CLIENT_SECRET, "test");
 
             //// Service account Authentication 
-            //String SERVICE_ACCOUNT_EMAIL = "2046123799103-6v9cj8jbub068jgmss54m9gkuk4q2qu8.apps.googleusercontent.com";
-            //string SERVICE_ACCOUNT_KEYFILE = @"c:\Diamto Test Everything Project-5381f306d5a1.p12";
-            //Service = DaimtoAnalyticsAuthenticationHelper.AuthenticateServiceAccount(SERVICE_ACCOUNT_EMAIL, SERVICE_ACCOUNT_KEYFILE);
+            //string SERVICE_ACCOUNT_EMAIL = "YOUR_SERVICE_ACCOUNT_EMAIL";
+            //string SERVICE_ACCOUNT_KEYFILE = @"YOUR_SERVICE_ACCOUNT_KEYFILE";
+            //service = DaimtoAnalyticsAuthenticationHelper.AuthenticateServiceAccount(SERVICE_ACCOUNT_EMAIL, SERVICE_ACCOUNT_KEYFILE);
 
 
 
@@ -105,13 +105,13 @@ namespace Daimto.Google.Sample.Analytics
             DaimtoAnaltyicsReportingHelper.OptionalValues options = new DaimtoAnaltyicsReportingHelper.OptionalValues();
             options.Dimensions = "ga:date";
             //Make sure the profile id you send is valid.  
-            var x = DaimtoAnaltyicsReportingHelper.Get(service, "78110423", "10daysAgo", "today", "ga:sessions", options);
+            var x = DaimtoAnaltyicsReportingHelper.Get(service, "YOUR_VIEW_ID", "10daysAgo", "today", "ga:sessions", options);
 
 
             DaimtoAnaltyicsRealTimeHelper.OptionalValues rtOptions = new DaimtoAnaltyicsRealTimeHelper.OptionalValues();
             options.Dimensions = "rt:userType";
             //Make sure the profile id you send is valid.  
-            var realTimeData = DaimtoAnaltyicsRealTimeHelper.Get(service, "78110423", "rt:activeUsers", rtOptions);
+            var realTimeData = DaimtoAnaltyicsRealTimeHelper.Get(service, "YOUR_VIEW_ID", "rt:activeUsers", rtOptions);
 
             foreach (var headers in realTimeData.ColumnHeaders) {
 
