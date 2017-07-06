@@ -1,63 +1,58 @@
 ﻿![Replica Pool API](https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png)
 
-## Unoffical Replica Pool API v1beta1 Samples for .NET  ##
+#Unoffical Replica Pool API v1beta1 Samples for .NET  
 
-API Description
+##API Description
 =============
 
 The Replica Pool API allows users to declaratively provision and manage groups of Google Compute Engine instances based on a common template.
 
 [Offical Documentation](https://developers.google.com/compute/docs/replica-pool/)
 
-Sample Description
+##Sample Description
 =============
 
 These samples show how to access the [Replica Pool API v1beta1](https://developers.google.com/compute/docs/replica-pool/) with the Offical [Google .Net client library](https://github.com/google/google-api-dotnet-client)
 
-These samples have been programmatically generated. Changes must be made in the T4 template files. Changes made in the samples themselves will be over written the next time the project is generated.
+Tutorials to go along with some of these samples can be found on [www.daimto.com](http://www.daimto.com/)
 
-Generated date: 01/02/2017 22:34:11 
+#Developer Documentation
 
-Supported Platforms
-=================================
+* [Google API client Library for .NET - Get Started](https://developers.google.com/api-client-library/dotnet/get_started)
 
-Unless other wise stated in the sample file samples should work in the following platforms.
+* [Supported APIs](https://developers.google.com/api-client-library/dotnet/apis/)
 
-* .NET Framework 4.5 and 4.6
-* .NET Core (via netstandard1.3 support)
-* Windows 8 Apps
-* Windows Phone 8 and 8.1
-* Portable Class Libraries
-
-Installation
+##Installation
 =================================
 
 NuGet package:
 
-Location: https://www.nuget.org/packages/Google.Apis.replicapool.v1beta1/ 
+Location: [NuGet Google.Apis.replicapool.v1beta1](https://www.nuget.org/packages/Google.Apis.replicapool.v1beta1)
 Install Command: PM>  Install-Package Google.Apis.replicapool.v1beta1
 
 ```
 PM> Install-Package Google.Apis.replicapool.v1beta1
 ```
 
-Contributing
+##Usage
 =================================
 
-These samples have been programmatically generated. Changes must be made in the T4 template files. Changes made in the samples themselves will be over written the next time the project is generated.
-
-See [Contributing](CONTRIBUTING.md)
-
-License
-=================================
-
-Copyright 2017 DAIMTO :  www.daimto.com
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
-the License. You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
-an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
-specific language governing permissions and limitations under the License.
+OAuth2
+```
+var keyFileLocation = @"C:\Users\Daimto\Documents\DaimtoTestEverythingCredentials\Diamto Test Everything Project-29e50502c19b.json";
+var user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+var scopes = new String[] { Google.Apis.replicapool.v1beta1.replicapoolService.Scope.replicapoolReadonly };
+var service = GoogleSamplecSharpSample.replicapoolv1beta1.Auth.Oauth2Example.GetreplicapoolService(keyFileLocation, user, scopes);
+```
+Public API Key
+```
+var apiKey = "XXXX";
+var servicePublicKey = GoogleSamplecSharpSample.replicapoolv1beta1.Auth.ApiKeyExample.GetService(apiKey);
+```
+Service Account
+```
+var serviceAccountKeyFileLocation = @"C:\Users\Daimto\Documents\DaimtoTestEverythingCredentials\Diamto Test Everything Project-29e50502c19b.json";
+var serviceAccountEmail = "googledrivemirrornas@daimto-tutorials-101.iam.gserviceaccount.com";
+var scopes = new String[] { Google.Apis.replicapool.v1beta1.replicapoolService.Scope.Calendar };            
+var serviceAccountService = GoogleSamplecSharpSample.replicapoolv1beta1.Auth.ServiceAccountExample.AuthenticateServiceAccount(serviceAccountKeyFileLocation, serviceAccountEmail, scopes);
+```
