@@ -1,0 +1,21 @@
+﻿// About 
+// 
+// Unoffical sample for the <#= CleanName #> <#= APIResponse.Version #> API for C#. 
+// This sample is designed to be used with the Google .Net client library. (https://github.com/google/google-api-dotnet-client)
+// 
+// API Description: <#= APIResponse.Description #>
+// API Documentation Link <#= (APIResponse.DocumentationLink != null)? APIResponse.DocumentationLink : "" #>
+//
+// Discovery Doc  https://www.googleapis.com/discovery/v1/apis/<#= CleanName #>/<#= APIResponse.Version.Replace(".","_") #>/rest
+//
+//------------------------------------------------------------------------------
+// Installation
+//
+// This sample code uses the Google .Net client library (https://github.com/google/google-api-dotnet-client)
+//
+// NuGet package:
+//
+// Location: https://www.nuget.org/packages/Google.Apis.<#= CleanName #>.<#= APIResponse.Version.Replace(".","_") #>/ 
+// Install Command: PM>  Install-Package Google.Apis.<#= CleanName #>.<#= APIResponse.Version.Replace(".","_") #>
+//
+//------------------------------------------------------------------------------

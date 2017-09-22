@@ -1,0 +1,127 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="C:\Users\HP_User\Source\Repos\discoverysamplebuilder\Src\GoogleSampleBuilder\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="GoogleSampleBuilder.Core.Util" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Google.Apis.Discovery.v1.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="APIResponse" type="Google.Apis.Discovery.v1.Data.RestDescription" #>
+<# string thisFile = "Oauth2Authentication.tt"; 
+var CleanName = ((APIResponse.CanonicalName != null) ? APIResponse.CanonicalName : APIResponse.Name).Replace(" ",string.Empty); 
+CleanName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CleanName.ToLower()); #>
+<#@include file="LicenceHeader.tt" #>  
+<#@include file="InstallationHeader.tt" #>  
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
+using System;
+using System.IO;
+using System.Threading;
+
+namespace GoogleSamplecSharpSample.<#= CleanName #><#= APIResponse.Version #>.Auth
+{
+    public static class Oauth2Example
+    {
+        /// <summary>
+        /// ** Installed Aplication only ** 
+        /// This method requests Authentcation from a user using Oauth2.  
+        /// </summary>
+        /// <param name="clientSecretJson">Path to the client secret json file from Google Developers console.</param>
+        /// <param name="userName">Identifying string for the user who is being authentcated.</param>
+        /// <param name="scopes">Array of Google scopes</param>
+        /// <returns><#= CleanName #>Service used to make requests against the <#= CleanName #> API</returns>
+        public static <#= CleanName #>Service Get<#= CleanName #>Service(string clientSecretJson, string userName, string[] scopes)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(userName))
+                    throw new ArgumentNullException("userName");
+                if (string.IsNullOrEmpty(clientSecretJson))
+                    throw new ArgumentNullException("clientSecretJson");
+                if (!File.Exists(clientSecretJson))
+                    throw new Exception("clientSecretJson file does not exist.");
+
+                var cred = GetUserCredential(clientSecretJson, userName, scopes);
+                return GetService(cred);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Get <#= CleanName #> service failed.", ex);
+            }
+        }
+
+        /// <summary>
+        /// ** Installed Aplication only ** 
+        /// This method requests Authentcation from a user using Oauth2.  
+        /// Credentials are stored in System.Environment.SpecialFolder.Personal
+        /// Documentation https://developers.google.com/accounts/docs/OAuth2
+        /// </summary>
+        /// <param name="clientSecretJson">Path to the client secret json file from Google Developers console.</param>
+        /// <param name="userName">Identifying string for the user who is being authentcated.</param>
+        /// <param name="scopes">Array of Google scopes</param>
+        /// <returns>authencated UserCredential</returns>
+        private static UserCredential GetUserCredential(string clientSecretJson, string userName, string[] scopes)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(userName))
+                    throw new ArgumentNullException("userName");
+                if (string.IsNullOrEmpty(clientSecretJson))
+                    throw new ArgumentNullException("clientSecretJson");
+                if (!File.Exists(clientSecretJson))
+                    throw new Exception("clientSecretJson file does not exist.");
+
+                // These are the scopes of permissions you need. It is best to request only what you need and not all of them               
+                using (var stream = new FileStream(clientSecretJson, FileMode.Open, FileAccess.Read))
+                {
+                    string credPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                    credPath = Path.Combine(credPath, ".credentials/", System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
+
+                    // Requesting Authentication or loading previously stored authentication for userName
+                    var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets,
+                                                                             scopes,
+                                                                             userName,
+                                                                             CancellationToken.None,
+                                                                             new FileDataStore(credPath, true)).Result;
+
+                    credential.GetAccessTokenForRequestAsync();
+                    return credential;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Get user credentials failed.", ex);
+            }
+        }
+
+        /// <summary>
+        /// This method get a valid service
+        /// </summary>
+        /// <param name="credential">Authecated user credentail</param>
+        /// <returns><#= CleanName #>Service used to make requests against the <#= CleanName #> API</returns>
+        private static <#= CleanName #>Service GetService(UserCredential credential)
+        {
+            try
+            {
+                if (credential == null)
+                    throw new ArgumentNullException("credential");
+
+                // Create <#= CleanName #> API service.
+                return new <#= CleanName #>Service(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "<#= CleanName #> Oauth2 Authentication Sample"
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Get <#= CleanName #> service failed.", ex);
+            }
+        }
+    }
+}

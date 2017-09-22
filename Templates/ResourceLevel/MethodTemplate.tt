@@ -1,0 +1,171 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="C:\Users\HP_User\Source\Repos\discoverysamplebuilder\Src\GoogleSampleBuilder\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="GoogleSampleBuilder.Core.Util" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Google.Apis.Discovery.v1.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="APIResponse" type="Google.Apis.Discovery.v1.Data.RestDescription" #>
+<#@ parameter name="Resource" type="System.Collections.Generic.KeyValuePair<string, Google.Apis.Discovery.v1.Data.RestResource>" #>
+<#@ parameter name="Parent" type="System.String" #>
+<# string thisFile = "methodTemplate.tt"; 
+var CleanName = ((APIResponse.CanonicalName != null) ? APIResponse.CanonicalName : APIResponse.Name).Replace(" ",string.Empty); 
+CleanName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CleanName.ToLower()); #>
+<#@include file="LicenceHeader.tt" #>  
+<#@include file="InstallationHeader.tt" #>  
+using Google.Apis.<#= CleanName #>.<#= APIResponse.Version.Replace(".","_") #>;
+using Google.Apis.<#= CleanName #>.<#= APIResponse.Version.Replace(".","_") #>.Data;
+using System;
+
+namespace GoogleSamplecSharpSample.<#= CleanName #><#= APIResponse.Version.Replace(".","_") #>.Methods
+{
+  
+    public static class <#= Resource.Key.FirstCharToUpper() #>Sample
+    {
+
+<# foreach (System.Collections.Generic.KeyValuePair<string, RestMethod> method in Resource.Value.Methods)  { 
+List<string> parms = new List<string>();   // holds the list of Paramaters 
+List<string> methodParms = new List<string>();   // holds the list of Paramaters 
+bool hasOptionalParms = false;
+parms.Add(string.Format("{0}Service service", CleanName)); 
+bool needsBody = false;
+if ((method.Value.HttpMethod != "GET" && method.Value.HttpMethod != "DELETE") && method.Value.Request != null){
+    needsBody = true;
+	methodParms.Add("body"); 
+   }
+if ((method.Value.Parameters != null) && ((method.Value.ParameterOrder == null && method.Value.Parameters != null) || (method.Value.ParameterOrder.Count != method.Value.Parameters.Count)))
+   {  // if we have optional paramaters display optonal comment
+    hasOptionalParms = true; 
+	 #>
+        public class <#= Resource.Key.FirstCharToUpper() #><#= method.Key.FirstCharToUpper() #>OptionalParms
+        {
+<#
+   foreach (var oparm in method.Value.Parameters)
+   {
+      bool found = false;
+      if (method.Value.ParameterOrder != null) 
+	  {
+       var find = method.Value.ParameterOrder.Where(a => a == oparm.Key).Count();;
+       if (find > 0)
+           found = true;
+      }
+      if (!found) 
+	  {
+#>
+            /// <#= (oparm.Value.Description != null)? oparm.Value.Description : "NA" #>
+            public <#= oparm.Value.Type.ToCsharpDataType() #> <#= oparm.Key.FirstCharToUpper() #> { get; set; }  
+<#
+      }                                
+   }
+    #>        
+        }
+ <#  } #>
+
+        /// <summary>
+        /// <#= (method.Value.Description != null)?method.Value.Description: "NA" #> 
+        /// Documentation <#= String.Format("https://developers.google.com/{0}/{1}/reference/{2}/{3}",CleanName.ToLower(),APIResponse.Version,Resource.Key, method.Key) #>
+        /// Generation Note: This does not always build corectly.  Google needs to standardise things I need to figuer out which ones are wrong.
+        /// </summary>
+        /// <param name="service">Authenticated <#= CleanName #> service.</param>  
+<# if (method.Value.ParameterOrder != null)
+	{
+     for (int i = 0; i < method.Value.ParameterOrder.Count(); i++)   // show a comment for each required paramater.
+		{
+		 var find = method.Value.Parameters.Where(a => a.Key == method.Value.ParameterOrder[i]).FirstOrDefault();
+		 parms.Add(string.Format("{0} {1}", find.Value.Type.ToCsharpDataType(), find.Key));  
+		 methodParms.Add(string.Format("{0}", find.Key)); #>
+        /// <param name="<#= find.Key #>"><#= (find.Value.Description != null)? find.Value.Description: "NA" #></param>
+<#}}
+if (needsBody)
+   {  // if we have optional paramaters display optonal comment 
+    parms.Add(string.Format("{0} body",method.Value.Request.Ref__.FirstCharToUpper())); #>
+        /// <param name="body">A valid <#= CleanName #> <#= APIResponse.Version #> body.</param>
+<# } 
+if (hasOptionalParms)
+   {  // if we have optional paramaters display optonal comment 
+   parms.Add(string.Format("{0}{1}OptionalParms optional = null", Resource.Key.FirstCharToUpper(), method.Key.FirstCharToUpper())); #>
+        /// <param name="optional">Optional paramaters.</param>
+<# 
+} 
+var allParms = string.Join(", ", parms);
+var allMethodParms = string.Join(", ", methodParms);
+if (method.Value.Response != null) {   // if we have a response display the return comment          
+ #>        /// <returns><#= (method.Value.Response != null)? method.Value.Response.Ref__ + "Response": "void" #></returns>
+<# } #>
+        public static <#= (method.Value.Response != null)? string.Format("{0}", method.Value.Response.Ref__.FirstCharToUpper()) : "void" #> <#= method.Key.FirstCharToUpper() #>(<#= allParms #>)
+        {
+            try
+            {
+                // Initial validation.
+                if (service == null)
+                    throw new ArgumentNullException("service");
+<# 
+if (needsBody) {#>
+                if (body == null)
+                    throw new ArgumentNullException("body");
+<#}
+if (method.Value.ParameterOrder != null)
+	{
+     for (int i = 0; i < method.Value.ParameterOrder.Count(); i++)   // show a comment for each required paramater.
+		{
+		 var find = method.Value.Parameters.Where(a => a.Key == method.Value.ParameterOrder[i]).FirstOrDefault();
+		  if(find.Value.Type.ToCsharpDataType() != "int") {#>
+                if (<#= find.Key #> == null)
+                    throw new ArgumentNullException(<#= find.Key #>);
+<#}}} #>
+
+<# if(!hasOptionalParms) { // we dont have any optional parms so just return it. #>
+                // Make the request.
+                <#= (method.Value.Response != null)?"return":"" #> service.<#= Resource.Key.FirstCharToUpper() #>.<#= method.Key.FirstCharToUpper() #>(<#= allMethodParms #>).Execute();
+<# } else { // we have optional parms we need to add them if they exist. #>
+                // Building the initial request.
+                var request = service.<#= Resource.Key.FirstCharToUpper() #>.<#= method.Key.FirstCharToUpper() #>(<#= allMethodParms #>);
+
+                // Applying optional parameters to the request.                
+                request = (<#= Resource.Key.FirstCharToUpper() #>Resource.<#= method.Key.FirstCharToUpper() #>Request)SampleHelpers.ApplyOptionalParms(request, optional);
+
+                // Requesting data.
+                <#= (method.Value.Response != null)?"return":"" #> request.Execute();
+<#}#>
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Request <#= Resource.Key.FirstCharToUpper() #>.<#= method.Key.FirstCharToUpper() #> failed.", ex);
+            }
+        }
+<# } #>        
+        }
+
+        public static class SampleHelpers
+        {
+
+        /// <summary>
+        /// Using reflection to apply optional parameters to the request.  
+        /// 
+        /// If the optonal parameters are null then we will just return the request as is.
+        /// </summary>
+        /// <param name="request">The request. </param>
+        /// <param name="optional">The optional parameters. </param>
+        /// <returns></returns>
+        public static object ApplyOptionalParms(object request, object optional)
+        {
+            if (optional == null)
+                return request;
+
+            System.Reflection.PropertyInfo[] optionalProperties = (optional.GetType()).GetProperties();
+
+            foreach (System.Reflection.PropertyInfo property in optionalProperties)
+            {
+                // Copy value from optional parms to the request.  They should have the same names and datatypes.
+                System.Reflection.PropertyInfo piShared = (request.GetType()).GetProperty(property.Name);
+				if (property.GetValue(optional, null) != null) // TODO Test that we do not add values for items that are null
+					piShared.SetValue(request, property.GetValue(optional, null), null);
+            }
+
+            return request;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".md" #>
+<#@ assembly name="C:\Users\HP_User\Source\Repos\discoverysamplebuilder\Src\GoogleSampleBuilder\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="GoogleSampleBuilder.Core.Util" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Google.Apis.Discovery.v1.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="APIResponse" type="Google.Apis.Discovery.v1.Data.RestDescription" #>
+![<#= APIResponse.Title #>](<#= APIResponse.Icons.X32 #>)
+<# var CleanName = ((APIResponse.CanonicalName != null) ? APIResponse.CanonicalName : APIResponse.Name).Replace(" ",string.Empty); #>
+
+# Unoffical <#= APIResponse.Title #> <#= APIResponse.Version #> Samples for .NET  
+
+## API Description
+
+<#= APIResponse.Description #>
+
+[Offical Documentation](<#= APIResponse.DocumentationLink #>)
+
+## Sample Description
+
+These samples show how to access the [<#= APIResponse.Title #> <#= APIResponse.Version #>](<#= APIResponse.DocumentationLink #>) with the Offical [Google .Net client library](https://github.com/google/google-api-dotnet-client)
+
+Tutorials to go along with some of these samples can be found on [www.daimto.com](http://www.daimto.com/)
+
+## Developer Documentation
+
+* [Google API client Library for .NET - Get Started](https://developers.google.com/api-client-library/dotnet/get_started)
+
+* [Supported APIs](https://developers.google.com/api-client-library/dotnet/apis/)
+
+### Installation
+
+NuGet package:
+
+Location: [NuGet Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>](https://www.nuget.org/packages/Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>)
+Install Command: PM>  Install-Package Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>
+
+```
+PM> Install-Package Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>
+```
+
+### Usage
+
+OAuth2
+```
+var keyFileLocation = @"C:\Users\Daimto\Documents\DaimtoTestEverythingCredentials\Diamto Test Everything Project-29e50502c19b.json";
+var user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+var scopes = new String[] { Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>.<#= CleanName #>Service.Scope.<#= CleanName #>Readonly };
+var service = GoogleSamplecSharpSample.<#= CleanName #><#= APIResponse.Version #>.Auth.Oauth2Example.Get<#= CleanName #>Service(keyFileLocation, user, scopes);
+```
+
+Public API Key
+
+```
+var apiKey = "XXXX";
+var servicePublicKey = GoogleSamplecSharpSample.<#= CleanName #><#= APIResponse.Version #>.Auth.ApiKeyExample.GetService(apiKey);
+```
+
+Service Account
+```
+var serviceAccountKeyFileLocation = @"C:\Users\Daimto\Documents\DaimtoTestEverythingCredentials\Diamto Test Everything Project-29e50502c19b.json";
+var serviceAccountEmail = "googledrivemirrornas@daimto-tutorials-101.iam.gserviceaccount.com";
+var scopes = new String[] { Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>.<#= CleanName #>Service.Scope.Calendar };            
+var serviceAccountService = GoogleSamplecSharpSample.<#= CleanName #><#= APIResponse.Version #>.Auth.ServiceAccountExample.AuthenticateServiceAccount(serviceAccountKeyFileLocation, serviceAccountEmail, scopes);
+```

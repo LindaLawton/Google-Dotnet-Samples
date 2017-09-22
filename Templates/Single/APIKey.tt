@@ -1,0 +1,54 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="C:\Users\HP_User\Source\Repos\discoverysamplebuilder\Src\GoogleSampleBuilder\packages\Google.Apis.1.27.1\lib\net45\Google.Apis.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="GoogleSampleBuilder.Core.Util" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Google.Apis.Discovery.v1.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="APIResponse" type="Google.Apis.Discovery.v1.Data.RestDescription" #>
+<# string thisFile = "APIKey.tt"; 
+var CleanName = ((APIResponse.CanonicalName != null) ? APIResponse.CanonicalName : APIResponse.Name).Replace(" ",string.Empty); 
+CleanName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CleanName.ToLower()); #>
+<#@include file="LicenceHeader.tt" #>  
+<#@include file="InstallationHeader.tt" #>  
+using Google.Apis.<#= CleanName #>.<#= APIResponse.Version #>;
+using Google.Apis.Services;
+using System;
+
+namespace GoogleSamplecSharpSample.<#= CleanName #><#= APIResponse.Version #>.Auth
+{
+    /// <summary>
+	/// When calling APIs that do not access private user data, you can use simple API keys. These keys are used to authenticate your 
+    /// application for accounting purposes. The Google API Console documentation also describes API keys.
+    /// https://support.google.com/cloud/answer/6158857
+    /// </summary>
+    public static class ApiKeyExample
+    {
+        /// <summary>
+        /// Get a valid <#= CleanName #>Service for a public API Key.
+        /// </summary>
+        /// <param name="apiKey">API key from Google Developer console</param>
+		/// <returns><#= CleanName #>Service</returns>
+        public static <#= CleanName #>Service GetService(string apiKey)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(apiKey))
+                    throw new ArgumentNullException("api Key");
+
+                return new <#= CleanName #>Service(new BaseClientService.Initializer()
+                {
+                    ApiKey = apiKey,
+                    ApplicationName = string.Format("{0} API key example", System.Diagnostics.Process.GetCurrentProcess().ProcessName),
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to create new <#= CleanName #> Service", ex);
+            }
+        }
+    }
+}
