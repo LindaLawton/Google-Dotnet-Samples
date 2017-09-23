@@ -2,7 +2,7 @@
 
 # Unoffical Fitness Samples for .NET  
 
-##API Description
+## API Description
 
 Stores and accesses user data in the fitness store from apps on any platform.
 

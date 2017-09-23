@@ -2,7 +2,7 @@
 
 # Unoffical Ad Exchange Seller API Samples for .NET  
 
-##API Description
+## API Description
 
 Accesses the inventory of Ad Exchange seller users and generates reports.
 

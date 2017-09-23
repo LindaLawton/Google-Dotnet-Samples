@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Vision API Samples for .NET  
 
-##API Description
+## API Description
 
 Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.
 

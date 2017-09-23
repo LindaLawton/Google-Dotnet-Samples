@@ -2,7 +2,7 @@
 
 # Unoffical YouTube Data API Samples for .NET  
 
-##API Description
+## API Description
 
 Supports core YouTube features, such as uploading videos, creating and managing playlists, searching for content, and much more.
 

@@ -2,7 +2,7 @@
 
 # Unoffical G Suite Activity API Samples for .NET  
 
-##API Description
+## API Description
 
 Provides a historical view of activity.
 

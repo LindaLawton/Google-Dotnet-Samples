@@ -2,7 +2,7 @@
 
 # Unoffical DoubleClick Search API Samples for .NET  
 
-##API Description
+## API Description
 
 Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
 

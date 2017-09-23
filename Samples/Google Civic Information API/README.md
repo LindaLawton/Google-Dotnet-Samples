@@ -2,7 +2,7 @@
 
 # Unoffical Google Civic Information API Samples for .NET  
 
-##API Description
+## API Description
 
 Provides polling places, early vote locations, contest data, election officials, and government representatives for U.S. residential addresses.
 

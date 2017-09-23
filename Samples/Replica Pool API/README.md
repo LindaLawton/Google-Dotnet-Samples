@@ -2,7 +2,7 @@
 
 # Unoffical Replica Pool API Samples for .NET  
 
-##API Description
+## API Description
 
 The Replica Pool API allows users to declaratively provision and manage groups of Google Compute Engine instances based on a common template.
 

@@ -2,7 +2,7 @@
 
 # Unoffical Firebase Rules API Samples for .NET  
 
-##API Description
+## API Description
 
 Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request.
 

@@ -2,7 +2,7 @@
 
 # Unoffical Enterprise Apps Reseller API Samples for .NET  
 
-##API Description
+## API Description
 
 Creates and manages your customers and their subscriptions.
 

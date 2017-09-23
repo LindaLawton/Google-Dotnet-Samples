@@ -2,7 +2,7 @@
 
 # Unoffical Google Proximity Beacon API Samples for .NET  
 
-##API Description
+## API Description
 
 Registers, manages, indexes, and searches beacons.
 

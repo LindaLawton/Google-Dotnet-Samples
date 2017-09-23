@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Translation API Samples for .NET  
 
-##API Description
+## API Description
 
 The Google Cloud Translation API lets websites and programs integrate with    Google Translate programmatically.
 

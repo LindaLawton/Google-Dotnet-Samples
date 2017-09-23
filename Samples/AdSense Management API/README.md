@@ -2,7 +2,7 @@
 
 # Unoffical AdSense Management API Samples for .NET  
 
-##API Description
+## API Description
 
 Accesses AdSense publishers' inventory and generates performance reports.
 

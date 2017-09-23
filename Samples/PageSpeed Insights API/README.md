@@ -2,7 +2,7 @@
 
 # Unoffical PageSpeed Insights API Samples for .NET  
 
-##API Description
+## API Description
 
 Analyzes the performance of a web page and provides tailored suggestions to make that page faster.
 

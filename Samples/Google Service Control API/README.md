@@ -2,7 +2,7 @@
 
 # Unoffical Google Service Control API Samples for .NET  
 
-##API Description
+## API Description
 
 Google Service Control provides control plane functionality to managed services, such as logging, monitoring, and status checks.
 

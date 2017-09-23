@@ -2,7 +2,7 @@
 
 # Unoffical Google Play EMM API Samples for .NET  
 
-##API Description
+## API Description
 
 Manages the deployment of apps to Android for Work users.
 

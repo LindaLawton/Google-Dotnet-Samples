@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Natural Language API Samples for .NET  
 
-##API Description
+## API Description
 
 Provides natural language understanding technologies to developers. Examples include sentiment analysis, entity recognition, entity sentiment analysis, and text annotations.
 

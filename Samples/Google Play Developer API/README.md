@@ -2,7 +2,7 @@
 
 # Unoffical Google Play Developer API Samples for .NET  
 
-##API Description
+## API Description
 
 Lets Android application developers access their Google Play accounts.
 

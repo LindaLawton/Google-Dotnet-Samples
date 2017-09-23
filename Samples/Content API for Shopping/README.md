@@ -2,7 +2,7 @@
 
 # Unoffical Content API for Shopping Samples for .NET  
 
-##API Description
+## API Description
 
 Manages product items, inventory, and Merchant Center accounts for Google Shopping.
 

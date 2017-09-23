@@ -2,7 +2,7 @@
 
 # Unoffical Street View Publish API Samples for .NET  
 
-##API Description
+## API Description
 
 Publishes 360 photos to Google Maps, along with position, orientation, and connectivity metadata. Apps can offer an interface for positioning, connecting, and uploading user-generated Street View images.
 

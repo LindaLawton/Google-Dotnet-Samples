@@ -2,7 +2,7 @@
 
 # Unoffical Knowledge Graph Search API Samples for .NET  
 
-##API Description
+## API Description
 
 Searches the Google Knowledge Graph for entities.
 

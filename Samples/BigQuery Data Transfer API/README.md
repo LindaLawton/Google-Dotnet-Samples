@@ -2,7 +2,7 @@
 
 # Unoffical BigQuery Data Transfer API Samples for .NET  
 
-##API Description
+## API Description
 
 Transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
 

@@ -2,7 +2,7 @@
 
 # Unoffical Stackdriver Trace API Samples for .NET  
 
-##API Description
+## API Description
 
 Send and retrieve trace data from Stackdriver Trace. Data is generated and available by default for all App Engine applications. Data from other applications can be written to Stackdriver Trace for display, reporting, and analysis.
 

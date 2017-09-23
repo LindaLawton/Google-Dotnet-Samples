@@ -2,7 +2,7 @@
 
 # Unoffical Google Analytics Reporting API Samples for .NET  
 
-##API Description
+## API Description
 
 Accesses Analytics report data.
 

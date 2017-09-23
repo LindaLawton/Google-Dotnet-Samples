@@ -2,7 +2,7 @@
 
 # Unoffical Google Compute Engine Instance Group Updater API Samples for .NET  
 
-##API Description
+## API Description
 
 [Deprecated. Please use compute.instanceGroupManagers.update method. replicapoolupdater API will be disabled after December 30th, 2016] Updates groups of Compute Engine instances.
 

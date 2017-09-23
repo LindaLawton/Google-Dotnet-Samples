@@ -2,7 +2,7 @@
 
 # Unoffical Cloud Spanner API Samples for .NET  
 
-##API Description
+## API Description
 
 Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.
 

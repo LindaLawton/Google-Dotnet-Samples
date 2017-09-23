@@ -2,7 +2,7 @@
 
 # Unoffical Firebase Dynamic Links API Samples for .NET  
 
-##API Description
+## API Description
 
 Programmatically creates and manages Firebase Dynamic Links.
 

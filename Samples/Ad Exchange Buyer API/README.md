@@ -2,7 +2,7 @@
 
 # Unoffical Ad Exchange Buyer API Samples for .NET  
 
-##API Description
+## API Description
 
 Accesses your bidding-account information, submits creatives for validation, finds available direct deals, and retrieves performance reports.
 

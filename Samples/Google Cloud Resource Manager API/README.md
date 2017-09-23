@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Resource Manager API Samples for .NET  
 
-##API Description
+## API Description
 
 The Google Cloud Resource Manager API provides methods for creating, reading, and updating project metadata.
 

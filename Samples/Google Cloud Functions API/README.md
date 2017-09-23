@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Functions API Samples for .NET  
 
-##API Description
+## API Description
 
 API for managing lightweight user-provided functions executed in response to events.
 

@@ -2,7 +2,7 @@
 
 # Unoffical Google Analytics API Samples for .NET  
 
-##API Description
+## API Description
 
 Views and manages your Google Analytics data.
 

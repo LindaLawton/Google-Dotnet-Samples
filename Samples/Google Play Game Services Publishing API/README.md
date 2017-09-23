@@ -2,7 +2,7 @@
 
 # Unoffical Google Play Game Services Publishing API Samples for .NET  
 
-##API Description
+## API Description
 
 The Publishing API for Google Play Game Services.
 

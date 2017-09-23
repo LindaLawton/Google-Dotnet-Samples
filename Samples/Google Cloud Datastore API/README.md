@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Datastore API Samples for .NET  
 
-##API Description
+## API Description
 
 Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application.
 

@@ -2,7 +2,7 @@
 
 # Unoffical Google Play Movies Partner API Samples for .NET  
 
-##API Description
+## API Description
 
 Gets the delivery status of titles for Google Play Movies Partners.
 

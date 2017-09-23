@@ -2,7 +2,7 @@
 
 # Unoffical Blogger API Samples for .NET  
 
-##API Description
+## API Description
 
 API for access to the data within Blogger.
 

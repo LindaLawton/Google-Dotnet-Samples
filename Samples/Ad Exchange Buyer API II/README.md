@@ -2,7 +2,7 @@
 
 # Unoffical Ad Exchange Buyer API II Samples for .NET  
 
-##API Description
+## API Description
 
 Accesses the latest features for managing Ad Exchange accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.
 

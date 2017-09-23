@@ -2,7 +2,7 @@
 
 # Unoffical Google Compute Engine Instance Group Manager API Samples for .NET  
 
-##API Description
+## API Description
 
 [Deprecated. Please use Instance Group Manager in Compute API] Provides groups of homogenous Compute Engine instances.
 

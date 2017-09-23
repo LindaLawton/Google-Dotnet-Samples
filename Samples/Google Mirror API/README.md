@@ -2,7 +2,7 @@
 
 # Unoffical Google Mirror API Samples for .NET  
 
-##API Description
+## API Description
 
 Interacts with Glass users via the timeline.
 

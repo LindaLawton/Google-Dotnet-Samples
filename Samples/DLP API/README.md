@@ -2,7 +2,7 @@
 
 # Unoffical DLP API Samples for .NET  
 
-##API Description
+## API Description
 
 The Google Data Loss Prevention API provides methods for detection of privacy-sensitive fragments in text, images, and Google Cloud Platform storage repositories.
 

@@ -2,7 +2,7 @@
 
 # Unoffical Google Play Game Services API Samples for .NET  
 
-##API Description
+## API Description
 
 The API for Google Play Game Services.
 

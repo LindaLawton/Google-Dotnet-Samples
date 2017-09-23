@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Deployment Manager API Samples for .NET  
 
-##API Description
+## API Description
 
 Declares, configures, and deploys complex solutions on Google Cloud Platform.
 

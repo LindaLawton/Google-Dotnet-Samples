@@ -2,7 +2,7 @@
 
 # Unoffical Google People API Samples for .NET  
 
-##API Description
+## API Description
 
 Provides access to information about profiles and contacts.
 

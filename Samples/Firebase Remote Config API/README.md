@@ -2,7 +2,7 @@
 
 # Unoffical Firebase Remote Config API Samples for .NET  
 
-##API Description
+## API Description
 
 Firebase Remote Config API allows the 3P clients to manage Remote Config conditions and parameters for Firebase applications.
 

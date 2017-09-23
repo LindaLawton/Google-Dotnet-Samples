@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Billing API Samples for .NET  
 
-##API Description
+## API Description
 
 Allows developers to manage billing for their Google Cloud Platform projects    programmatically.
 

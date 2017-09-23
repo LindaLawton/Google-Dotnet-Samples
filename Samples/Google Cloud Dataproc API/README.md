@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Dataproc API Samples for .NET  
 
-##API Description
+## API Description
 
 Manages Hadoop-based clusters and jobs on Google Cloud Platform.
 

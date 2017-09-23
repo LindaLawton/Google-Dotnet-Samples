@@ -2,7 +2,7 @@
 
 # Unoffical Groups Settings API Samples for .NET  
 
-##API Description
+## API Description
 
 Lets you manage permission levels and related settings of a group.
 

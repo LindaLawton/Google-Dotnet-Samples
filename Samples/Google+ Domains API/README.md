@@ -2,7 +2,7 @@
 
 # Unoffical Google+ Domains API Samples for .NET  
 
-##API Description
+## API Description
 
 Builds on top of the Google+ platform for Google Apps Domains.
 

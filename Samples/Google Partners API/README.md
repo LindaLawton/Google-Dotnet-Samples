@@ -2,7 +2,7 @@
 
 # Unoffical Google Partners API Samples for .NET  
 
-##API Description
+## API Description
 
 Searches certified companies and creates contact leads with them, and also audits the usage of clients.
 

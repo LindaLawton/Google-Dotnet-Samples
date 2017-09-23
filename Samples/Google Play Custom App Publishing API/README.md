@@ -2,7 +2,7 @@
 
 # Unoffical Google Play Custom App Publishing API Samples for .NET  
 
-##API Description
+## API Description
 
 An API to publish custom Android apps.
 

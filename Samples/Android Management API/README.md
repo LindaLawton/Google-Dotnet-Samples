@@ -2,7 +2,7 @@
 
 # Unoffical Android Management API Samples for .NET  
 
-##API Description
+## API Description
 
 The Android Management API provides remote enterprise management of Android devices and apps.
 

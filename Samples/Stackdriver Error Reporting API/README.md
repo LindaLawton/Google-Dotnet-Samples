@@ -2,7 +2,7 @@
 
 # Unoffical Stackdriver Error Reporting API Samples for .NET  
 
-##API Description
+## API Description
 
 Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
 

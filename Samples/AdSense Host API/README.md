@@ -2,7 +2,7 @@
 
 # Unoffical AdSense Host API Samples for .NET  
 
-##API Description
+## API Description
 
 Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
 

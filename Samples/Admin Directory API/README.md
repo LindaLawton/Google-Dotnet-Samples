@@ -2,7 +2,7 @@
 
 # Unoffical Admin Directory API Samples for .NET  
 
-##API Description
+## API Description
 
 The Admin SDK Directory API lets you view and manage enterprise resources such as users and groups, administrative notifications, security features, and more.
 

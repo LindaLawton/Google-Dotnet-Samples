@@ -2,7 +2,7 @@
 
 # Unoffical Stackdriver Logging API Samples for .NET  
 
-##API Description
+## API Description
 
 Writes log entries and manages your Stackdriver Logging configuration.
 

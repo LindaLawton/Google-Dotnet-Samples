@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud DNS API Samples for .NET  
 
-##API Description
+## API Description
 
 Configures and serves authoritative DNS records.
 

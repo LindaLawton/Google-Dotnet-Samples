@@ -2,7 +2,7 @@
 
 # Unoffical Android Device Provisioning Partner API Samples for .NET  
 
-##API Description
+## API Description
 
 Automates reseller integration into zero-touch enrollment by assigning devices to customers and creating device reports.
 

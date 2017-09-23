@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Deployment Manager Alpha API Samples for .NET  
 
-##API Description
+## API Description
 
 The Deployment Manager API allows users to declaratively configure, deploy and run complex solutions on the Google Cloud Platform.
 

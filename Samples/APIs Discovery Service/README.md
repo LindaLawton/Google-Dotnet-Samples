@@ -2,7 +2,7 @@
 
 # Unoffical APIs Discovery Service Samples for .NET  
 
-##API Description
+## API Description
 
 Provides information about other Google APIs, such as what APIs are available, the resource, and method details for each API.
 

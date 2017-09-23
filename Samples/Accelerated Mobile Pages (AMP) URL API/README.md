@@ -2,7 +2,7 @@
 
 # Unoffical Accelerated Mobile Pages (AMP) URL API Samples for .NET  
 
-##API Description
+## API Description
 
 Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s).
 

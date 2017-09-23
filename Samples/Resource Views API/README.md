@@ -2,7 +2,7 @@
 
 # Unoffical Resource Views API Samples for .NET  
 
-##API Description
+## API Description
 
 The Resource View API allows users to create and manage logical sets of Google Compute Engine instances.
 

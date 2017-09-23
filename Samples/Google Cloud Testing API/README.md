@@ -2,7 +2,7 @@
 
 # Unoffical Google Cloud Testing API Samples for .NET  
 
-##API Description
+## API Description
 
 Allows developers to run automated tests for their mobile applications on Google infrastructure.
 
