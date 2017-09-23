@@ -1,16 +1,16 @@
-﻿![Google Cloud Video Intelligence API](http://www.google.com/images/icons/product/search-32.gif)
+﻿![Cloud Video Intelligence API](http://www.google.com/images/icons/product/search-32.gif)
 
-# Unoffical Google Cloud Video Intelligence API v1beta1 Samples for .NET  
+# Unoffical Cloud Video Intelligence API v1beta1 Samples for .NET  
 
 ## API Description
 
-Google Cloud Video Intelligence API.
+Cloud Video Intelligence API.
 
 [Offical Documentation](https://cloud.google.com/video-intelligence/docs/)
 
 ## Sample Description
 
-These samples show how to access the [Google Cloud Video Intelligence API v1beta1](https://cloud.google.com/video-intelligence/docs/) with the Offical [Google .Net client library](https://github.com/google/google-api-dotnet-client)
+These samples show how to access the [Cloud Video Intelligence API v1beta1](https://cloud.google.com/video-intelligence/docs/) with the Offical [Google .Net client library](https://github.com/google/google-api-dotnet-client)
 
 Tutorials to go along with some of these samples can be found on [www.daimto.com](http://www.daimto.com/)
 
