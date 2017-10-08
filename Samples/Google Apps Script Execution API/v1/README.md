@@ -4,7 +4,7 @@
 
 ## API Description
 
-Executes functions in Google Apps Script projects.
+An API for managing and executing Google Apps Script projects.
 
 [Offical Documentation](https://developers.google.com/apps-script/execution/rest/v1/scripts/run)
 
